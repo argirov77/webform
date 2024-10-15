@@ -1,0 +1,478 @@
+/* Reset some default styles */
+
+
+body, h1, form, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body and main tag styling */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+    color: #333;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Styling for the language selection area */
+/* Container styling for language selection */
+/* Container styling for language selection */
+#language-selection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Hidden radio buttons */
+#language-selection input[type="radio"] {
+    display: none; /* Hide the radio button itself */
+}
+
+/* Style for labels as buttons */
+#language-selection label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: inline-block;
+    background-color: #e0e0e0; /* Neutral button background */
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid #ccc; /* Subtle border for button-like appearance */
+}
+
+/* Hover and focus effects for labels */
+#language-selection label:hover, #language-selection label:focus-within {
+    background-color: #4A90E2;
+    color: white;
+    border-color: #4A90E2;
+}
+
+/* Checked state for label buttons */
+#language-selection input[type="radio"]:checked + label {
+    background-color: #4A90E2;
+    color: white;
+    border-color: #4A90E2;
+}
+
+
+.form-step {
+    display: none; /* Hide all steps initially */
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-step-active {
+    display: block; /* Only the active step is displayed */
+}
+
+
+#language-selection label:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Additional styles for the form elements */
+.form_wrapper {
+    margin-bottom: 15px;
+}
+
+.label_wrapper {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* Radio Button Customization */
+/* Style the label */
+label.radio-button {
+    display: inline-block;
+    background-color: #f4f4f4; /* Light grey background */
+    padding: 10px 20px 10px 40px; /* Adjust left padding to make space for the radio button */
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    margin: 5px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s;
+    user-select: none; /* Prevent text selection */
+}
+
+/* Create a custom radio button appearance */
+/* Completely hide the default radio input visually but keep it accessible */
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    border: 0;
+}
+/* Style the label that acts as the radio button */
+/* Style the label that acts as the radio button */
+
+/* Create a custom radio button appearance */
+label.radio-button:before {
+    content: '';
+    position: absolute;
+    left: 15px; /* Adjusted to not overlap text */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+}
+
+/* Hover effect on the label */
+label.radio-button:hover {
+    border-color: #999; /* Darker border on hover */
+}
+
+/* Style when radio is checked */
+input[type="radio"]:checked + label.radio-button {
+    border-color: #4A90E2; /* Blue border */
+    background-color: #e6f0fd; /* Light blue background */
+}
+
+/* Inner circle style when checked */
+input[type="radio"]:checked + label.radio-button:before {
+    background-color: #4A90E2; /* Blue inner circle */
+    border-color: #4A90E2;
+}
+
+/* Focus state to mimic 'select2' focus style */
+input[type="radio"]:focus + label.radio-button {
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.5);
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+
+/* Base styles included from previous example */
+/* Base styles included from previous example */
+.form_wrapper {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(220, 220, 220, 0.3);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form_wrapper label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px; /* Adjust for smaller screens below */
+}
+
+.form_wrapper input[type="text"],
+.form_wrapper input[type="email"],
+.form_wrapper input[type="date"],
+.form_wrapper select,
+.form_wrapper textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive adjustments using media queries */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .form_wrapper {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form_wrapper input[type="text"],
+    .form_wrapper input[type="email"],
+    .form_wrapper input[type="date"],
+    .form_wrapper select,
+    .form_wrapper textarea {
+        padding: 10px;
+    }
+}
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    .form_wrapper {
+        padding: 15px;
+    }
+
+    .form_wrapper label {
+        font-size: 12px; /* Smaller font size for small devices */
+    }
+
+    .form_wrapper input[type="text"],
+    .form_wrapper input[type="email"],
+    .form_wrapper input[type="date"],
+    .form_wrapper select,
+    .form_wrapper textarea {
+        padding: 8px;
+    }
+
+    /* Increase touch targets for better accessibility */
+    .form_wrapper button,
+    .form_wrapper input[type="submit"] {
+        padding: 12px 20px;
+        font-size: 16px; /* Larger font for buttons on small devices */
+    }
+}}
+/* Updated styling for each form question block */
+.form_wrapper {
+    background-color: rgba(255, 255, 255, 0.1); /* Very light white transparency */
+    border: 1px solid rgba(220, 220, 220, 0.3); /* Subtle border with transparency */
+    padding: 20px; /* Ample padding for content */
+    margin-bottom: 20px; /* Space between each question block */
+    border-radius: 8px; /* Soft rounded corners for modern look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
+}
+
+/* Styling for labels within form wrappers for clarity */
+.form_wrapper label {
+    font-weight: bold; /* Emphasize label text */
+    display: block; /* Ensure labels appear on new line */
+    margin-bottom: 8px; /* Space below each label */
+    color: #333; /* Dark color for readability against light background */
+    font-size: 14px; /* Optimal font size for forms */
+}
+
+
+.progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 40px; /* Adjust based on preference */
+}
+
+.progress-step {
+    width: 25%; /* As there are four steps */
+    text-align: center;
+    line-height: 40px; /* Align text vertically */
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+    cursor: pointer; /* Make it appear clickable */
+}
+
+.progress-step.active {
+    background-color: #4A90E2; /* Highlight color for the current step */
+    color: white;
+}
+/* General button styling */
+/* Base styling for all buttons */
+button {
+    padding: 12px 24px;  /* Comfortable padding */
+    font-family: 'Poppins', sans-serif;  /* Consistent typography */
+    font-size: 16px;  /* Readable text size */
+    text-transform: uppercase;  /* Making the text uppercase for better readability */
+    color: white;  /* Text color for visibility */
+    border: none;  /* Removing the border for a cleaner look */
+    border-radius: 5px;  /* Rounded corners */
+    cursor: pointer;  /* Indicates clickable item */
+    transition: background-color 0.3s, box-shadow 0.3s;  /* Smooth transitions for interactive effects */
+    outline: none;  /* Hides the focus outline to manage via custom styles */
+}
+
+
+/* Specific styling for the back button */
+#back-3 {
+    background-color: #6C757D;  /* Neutral gray for secondary actions */
+}
+
+#back-3:hover, #back-3:focus {
+    background-color: #5A6268;  /* A darker shade of gray on hover/focus for visual feedback */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* Subtle shadow for depth */
+}
+#back-2 {
+    background-color: #6C757D;  /* Neutral gray for secondary actions */
+}
+
+#back-2:hover, #back-2:focus {
+    background-color: #5A6268;  /* A darker shade of gray on hover/focus for visual feedback */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* Subtle shadow for depth */
+}#back-1 {
+    background-color: #6C757D;  /* Neutral gray for secondary actions */
+}
+
+#back-1:hover, #back-1:focus {
+    background-color: #5A6268;  /* A darker shade of gray on hover/focus for visual feedback */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* Subtle shadow for depth */
+}
+
+/* Specific styling for the submit button */
+#save {
+    background-color: #4A90E2;  /* Blue color to indicate a primary action */
+    font-weight: bold;  /* Emphasizes the action */
+}
+
+#save:hover, #save:focus {
+    background-color: #357ABD;  /* Slightly darker blue on interaction */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* Shadow for depth */
+}
+.input_wrapper input[type="month"],
+.input_wrapper select {
+    width: 100%; /* Full width within the wrapper */
+    padding: 10px; /* Comfortable padding inside the input */
+    border: 1px solid #ccc; /* Subtle border around the input */
+    border-radius: 4px; /* Rounded corners on the inputs */
+    font-family: 'Arial', sans-serif; /* Consistent font family */
+    font-size: 16px; /* Readable font size */
+    margin-right: 10px; /* Space between multiple inputs */
+}
+
+.label_wrapper label {
+    display: block; /* Ensure the label is on its own line */
+    font-weight: bold; /* Make the label text bold */
+    color: #333; /* Dark grey color for readability */
+    font-size: 14px; /* Slightly smaller text for labels */
+}
+
+/* Style focus and hover states for better user interaction feedback */
+.input_wrapper input[type="month"]:focus,
+.input_wrapper select:focus {
+    border-color: #4A90E2; /* Blue border for focus */
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Glowing effect for focus */
+}
+
+.input_wrapper input[type="month"]:hover,
+.input_wrapper select:hover {
+    border-color: #888; /* Change border color on hover */
+}
+/* Common style for all input types when there is an error */
+.error {
+    outline: 2px solid red; // Outline instead of border to avoid layout shifts
+}
+
+
+/* Specific styling adjustments for different types of inputs */
+input[type="text"].error,
+select.error,
+
+
+input[type="radio"].error,
+input[type="checkbox"].error {
+    outline-offset: 3px; /* Make sure the outline does not overlap other elements */
+}
+.title {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin: 20px 0;
+}
+.disabled-button {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#review-container {
+    margin-bottom: 20px;
+}
+
+#review-container .review-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+

@@ -1,0 +1,104 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Success</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6;
+            font-family: Arial, sans-serif;
+        }
+        .success-container {
+            text-align: center;
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .success-container h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .success-container p {
+            font-size: 18px;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <h1 data-en="Thank You!" data-ru="Спасибо!" data-bg="Благодаря!" data-ro="Mulțumim!">Thank You!</h1>
+        <p data-en="We appreciate your submission. One of our representatives will contact you with the insurance options and quotes within the next business day."
+           data-ru="Мы благодарим вас за отправку формы. Наш представитель свяжется с вами, чтобы предоставить варианты страховки и расценки в течение следующего рабочего дня."
+           data-bg="Благодарим ви за изпращането на формуляра. Наш представител ще се свърже с вас, за да ви предостави възможности за застраховка и оферти в рамките на следващия работен ден."
+           data-ro="Vă mulțumim pentru trimiterea formularului. Unul dintre reprezentanții noștri vă va contacta pentru a vă oferi opțiuni și cotații de asigurare în următoarea zi lucrătoare.">
+           We appreciate your submission. One of our representatives will contact you with the insurance options and quotes within the next business day.
+        </p>
+    </div>
+    <script>
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Function to update the language based on URL parameter
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-en], [data-ru], [data-bg], [data-ro]').forEach(el => {
+                switch (lang) {
+                    case 'russian':
+                        el.textContent = el.dataset.ru;
+                        break;
+                    case 'bulgarian':
+                        el.textContent = el.dataset.bg;
+                        break;
+                    case 'romanian':
+                        el.textContent = el.dataset.ro;
+                        break;
+                    case 'english':
+                    default:
+                        el.textContent = el.dataset.en;
+                        break;
+                }
+            });
+        }
+
+        // Get the language parameter from the URL and update the content
+        const lang = getUrlParameter('lang');
+        updateLanguage(lang);
+
+        // Add history state to prevent back navigation to the form
+        history.replaceState(null, null, location.href);
+        window.addEventListener('popstate', function(event) {
+            let alertMessage;
+            switch (lang) {
+                case 'russian':
+                    alertMessage = 'Заявка была отправлена, свяжитесь с нами если необходимо скорректировать данные';
+                    break;
+                case 'bulgarian':
+                    alertMessage = 'Заявката беше изпратена, свържете се с нас ако е необходимо да коригирате данните';
+                    break;
+                case 'romanian':
+                    alertMessage = 'Cererea a fost trimisă, contactați-ne dacă este necesar să corectați datele';
+                    break;
+                case 'english':
+                default:
+                    alertMessage = 'The application has been submitted, please contact us if you need to correct the information';
+                    break;
+            }
+            alert(alertMessage);
+            history.replaceState(null, null, location.href);
+        });
+    </script>
+</body>
+</html>
+

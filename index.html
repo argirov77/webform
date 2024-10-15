@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.min.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+</head>
+<body>
+    <main>
+
+        <div id="language-selection">
+            <input type="radio" id="english" name="language" value="english">
+            <label for="english">English</label>
+            <input type="radio" id="russian" name="language" value="russian">
+            <label for="russian">Русский</label>
+            <input type="radio" id="bulgarian" name="language" value="bulgarian">
+            <label for="bulgarian">Български</label>
+            <input type="radio" id="romanian" name="language" value="romanian">
+            <label for="romanian">Română</label>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar">
+                <div class="progress-step active" data-step="1" data-en="Step 1" data-ru="Шаг 1" data-bg="Стъпка 1" data-ro="Pasul 1">Step 1</div>
+                <div class="progress-step" data-step="2" data-en="Step 2" data-ru="Шаг 2" data-bg="Стъпка 2" data-ro="Pasul 2">Step 2</div>
+                <div class="progress-step" data-step="3" data-en="Step 3" data-ru="Шаг 3" data-bg="Стъпка 3" data-ro="Pasul 3">Step 3</div>
+                <div class="progress-step" data-step="4" data-en="Step 4" data-ru="Шаг 4" data-bg="Стъпка 4" data-ro="Pasul 4">Step 4</div>
+            </div>
+        </div>
+
+
+        <div id="form-container" style="display: none;">
+                <div class="title" data-en="Vehicle Insurance Quote Form" data-ru="Форма для получения цены на страхование транспортного средства" data-bg="Формуляр за оферта за застраховка на превозно средство" data-ro="Formular pentru cotație de asigurare auto">
+                    Vehicle Insurance Quote Form
+                </div>
+
+            <form method="post" id="form">
+                <!--Step 1 -->
+                <div class="form-step form-step-active" id="form-step-1">
+                    <!-- First step -->
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label data-en="What is your vehicle?" data-ru="Какой ваш транспорт?" data-bg="Тип на МПС?" data-ro="Ce vehicul aveți?">What is your vehicle?</label>
+                        </div>
+                        <div class="vehicle-options">
+                            <input type="radio" id="motorbike" name="VehicleType" value="Motorbike" >
+                            <label for="motorbike" data-en="Motorbike" data-ru="Мотоцикл" data-bg="Мотоциклет" data-ro="Motocicletă" class="radio-button">Motorbike</label>
+
+                            <input type="radio" id="car" name="VehicleType" value="Car" >
+                            <label for="car" data-en="Car" data-ru="Автомобиль" data-bg="Кола" data-ro="Mașină" class="radio-button">Car</label>
+
+                            <input type="radio" id="carTemporary" name="VehicleType" value="Car-Temporary" >
+                            <label for="carTemporary" data-en="Car-Temporary" data-ru="(Временная страховка) автомобиль" data-bg="(Временна застраховка) кола" data-ro="Mașină temporară" class="radio-button">Car-Temporary</label>
+
+                            <input type="radio" id="van" name="VehicleType" value="Van" >
+                            <label for="van" data-en="Van" data-ru="ВАН" data-bg="Ван" data-ro="Dubă" class="radio-button">Van</label>
+
+                            <input type="radio" id="vanTemporary" name="VehicleType" value="Van-Temporary" >
+                            <label for="vanTemporary" data-en="Van-Temporary" data-ru="(Временная страховка) фургон" data-bg="(Временна застраховка) ван" data-ro="Dubă temporară" class="radio-button">Van-Temporary</label>
+
+                            <input type="radio" id="vanCourier" name="VehicleType" value="Van-Courier" >
+                            <label for="vanCourier" data-en="Van-Courier" data-ru="Курьерский ВАН" data-bg="Куриерски ван" data-ro="Dubă de curierat" class="radio-button">Van-Courier</label>
+                        </div>
+                    </div>
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label data-en="Choose your Title" data-ru="Выберите ваше обращение" data-bg="Изберете вашето обръщение" data-ro="Alegeți titlul dumneavoastră">Choose your Title</label>
+                        </div>
+                        <div class="title-options">
+                            <input type="radio" id="mr" name="TITLE" value="Mr" >
+                            <label for="mr" class="radio-button">Mr</label>
+
+                            <input type="radio" id="mrs" name="TITLE" value="Mrs" >
+                            <label for="mrs" class="radio-button">Mrs</label>
+
+                            <input type="radio" id="ms" name="TITLE" value="Ms" >
+                            <label for="ms" class="radio-button">Ms</label>
+
+                            <input type="radio" id="miss" name="TITLE" value="Miss" >
+                            <label for="miss" class="radio-button">Miss</label>
+                        </div>
+                    </div>
+
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label for="firstName" data-en="First Name" data-ru="Имя (на латинице)" data-bg="Първо име (на латиница)" data-ro="Prenume">First Name</label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" id="firstName" name="FIRSTNAME" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');" >
+                        </div>
+                    </div>
+
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label for="lastName" data-en="Last Name" data-ru="Фамилия (на латинице)" data-bg="Фамилно име (на латиница)" data-ro="Nume de familie">Last Name</label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" id="lastName" name="LASTNAME" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');" >
+                        </div>
+                    </div>
+
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label for="dob" data-en="Date of Birth" data-ru="Дата рождения" data-bg="Дата на раждане" data-ro="Data nașterii">Date of Birth</label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" id="dob" name="DATEOFBIRTH" class="single-date-field"  title="DD/MM/YYYY" placeholder="DD/MM/YYYY">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label data-en="Email" data-ru="Электронная почта" data-bg="Електронна поща (E-mail)" data-ro="E-mail">Email</label>
+                        </div>
+                        <input name="EMAIL" type="email"  />
+                    </div>
+
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label data-en="Phone" data-ru="Телефон для связи" data-bg="Телефон за връзка" data-ro="Telefon">Phone</label>
+                        </div>
+                        <input name="PHONE" type="tel"  />
+                    </div>
+
+
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label for="firstLineaddress1" data-en="First line of address" data-ru="Первая строка адреса" data-bg="Първа линия на адреса" data-ro="Prima linie a adresei">a) First line of address:</label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" id="firstLineaddress1" name="FIRSTLINE" >
+                        </div>
+
+                        <div class="label_wrapper">
+                            <label for="postcodeaddress1" data-en="Postcode" data-ru="Почтовый индекс (postcode)" data-bg="Пощенски код (postcode)" data-ro="Cod poștal">b) Postcode:</label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" id="postcodeaddress1" name="POSTCODE" >
+                        </div>
+                    </div>
+
+
+
+
+
+                    <button type="button" id="next-1"
+                            data-en="Next"
+                            data-ru="Вперед"
+                            data-bg="Напред"
+                            data-ro="Următorul">
+                        Next
+                    </button>
+
+                </div>
+                <!--Step 2 -->
+                <div class="form-step" id="form-step-2" style="display: none">
+                    <!-- Step 2-->
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label data-en="Type of Driving Licence" data-ru="Тип водительских прав" data-bg="Вид шофьорска книжка" data-ro="Tipul permisului de conducere">Type of Driving Licence</label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="radio" id="uk" name="DRIVINGLICENCE" value="UK">
+                            <label for="uk" data-en="UK" data-ru="Великобритания" data-bg="Великобритания" data-ro="Marea Britanie" class="radio-button">UK</label>
+
+                            <input type="radio" id="eu" name="DRIVINGLICENCE" value="EU">
+                            <label for="eu" data-en="EU" data-ru="Европейский Союз" data-bg="Европейски съюз" data-ro="Uniunea Europeană" class="radio-button">EU</label>
+
+                            <input type="radio" id="other" name="DRIVINGLICENCE" value="Other">
+                            <label for="other" data-en="Other" data-ru="Другой" data-bg="Друг" data-ro="Altul" class="radio-button">Other</label>
+
+                            <!-- Input field for 'Other' will only display when 'Other' is selected -->
+                            <input type="text" id="otherText" name="OTHERTEXT" class="input-text" placeholder="Specify if Other" oninput="this.value = this.value.replace(/[^A-Za-zА-Яа-я ]/g, '');" style="display: none;">
+                        </div>
+                    </div>
+
+                    <div class="form_wrapper" id="ukLicenceTypeWrapper" style="display: none;">
+                        <div class="label_wrapper">
+                            <label data-en="Specify type of UK Driving Licence" data-ru="Уточните тип водительских прав Великобритании" data-bg="Посочете вида на шофьорската книжка от Великобритания" data-ro="Specificați tipul permisului de conducere din Marea Britanie">Specify type of UK Driving Licence</label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="radio" id="fullUKManual" name="UK_LICENCE_TYPE" value="Full UK-manual">
+                            <label for="fullUKManual" data-en="UK-manual rights" data-ru="UK-manual права (механическая коробка передач)" data-bg="UK-manual права (механична скоростна кутия)" data-ro="Permis UK-manual (cutie de viteze manuală)" class="radio-button">UK-manual права (механическая коробка передач)</label>
+
+                            <input type="radio" id="fullUKAuto" name="UK_LICENCE_TYPE" value="Full UK-auto">
+                            <label for="fullUKAuto" data-en="UK-auto rights" data-ru="UK-auto права (автоматическая коробка передач)" data-bg="UK-auto права (автоматична скоростна кутия)" data-ro="Permis UK-auto (cutie de viteze automată)" class="radio-button">UK-auto права (автоматическая коробка передач)</label>
+
+                            <input type="radio" id="ukProvisional" name="UK_LICENCE_TYPE" value="UK Provisional">
+                            <label for="ukProvisional" data-en="UK Provisional" data-ru="UK Provissional - (учебные права Великобритании)" data-bg="UK Provisional - (учебна книжка Великобритания)" data-ro="Permis provizoriu din Marea Britanie" class="radio-button">UK Provissional - (учебные права Великобритании)</label>
+                        </div>
+                    </div>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const radios = document.querySelectorAll('input[name="DRIVINGLICENCE"]');
+                            const otherTextInput = document.getElementById('otherText');
+                            const ukLicenceTypeWrapper = document.getElementById('ukLicenceTypeWrapper');
+
+                            radios.forEach(radio => {
+                                radio.addEventListener('change', function() {
+                                    if (document.getElementById('other').checked) {
+                                        otherTextInput.style.display = 'block'; // Show the text input
+                                    } else {
+                                        otherTextInput.style.display = 'none'; // Hide the text input
+                                        otherTextInput.value = ''; // Clear the value if 'Other' is not selected
+                                    }
+
+                                    if (document.getElementById('uk').checked) {
+                                        ukLicenceTypeWrapper.style.display = 'block'; // Show the UK licence type options
+                                    } else {
+                                        ukLicenceTypeWrapper.style.display = 'none'; // Hide the UK licence type options
+                                        document.querySelectorAll('input[name="UK_LICENCE_TYPE"]').forEach(el => el.checked = false); // Clear the value if 'UK' is not selected
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+
+
+                    <div class="form_wrapper" id="drivingLicenceQuestions" style="display: none;">
+                        <div id="questionsBlock1">
+                            <div class="label_wrapper">
+                                <label for="licenceDateA" data-en="Date when you passed your first driving test category A?" data-ru="Дата прохождения первого экзамена по вождению категории А?" data-bg="Дата на първия изпит по шофиране категория А?" data-ro="Data la care ai trecut primul test de conducere categoria A?">Date when you passed your first driving test category A?</label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="text" id="licenceDateA" name="LICENCEDATEA" placeholder="DD/MM/YYYY">
+                            </div>
+                        </div>
+
+                        <div id="questionsBlock2">
+                            <div class="label_wrapper">
+                                <label for="licenceDateB" data-en="Date when you passed your first driving test category B?" data-ru="Дата прохождения первого экзамена по вождению категории B?" data-bg="Дата на първия изпит по шофиране категория B?" data-ro="Data la care ai trecut primul test de conducere categoria B?">Date when you passed your first driving test category B?</label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="text" id="licenceDateB" name="LICENCEDATEB" placeholder="DD/MM/YYYY">
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+
+
+                        document.querySelector('form').addEventListener('change', updateDisplay);
+
+                        function updateDisplay() {
+                            var VehicleType = document.querySelector('input[name="VehicleType"]:checked') ? document.querySelector('input[name="VehicleType"]:checked').value : null;
+
+                            document.getElementById('drivingLicenceQuestions').style.display = VehicleType ? 'block' : 'none';
+
+                            if (VehicleType === 'Motorbike') {
+                                document.getElementById('questionsBlock1').style.display = 'block';
+                            } else if (VehicleType) {
+                                document.getElementById('questionsBlock1').style.display = 'none';
+                            } else {
+                                document.getElementById('questionsBlock1').style.display = 'none';
+                                document.getElementById('questionsBlock2').style.display = 'none';
+                            }
+                        }
+                    </script>
+
+                    <div class="form_wrapper" id="maritalStatus" style="display: none;">
+                        <div class="label_wrapper">
+                            <label for="maritalStatus" data-en="Marital Status" data-ru="Семейное положение" data-bg="Семейно положение" data-ro="Starea civilă" >Marital Status</label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="radio" id="married" name="MARITALSTATUS" value="Married" >
+                            <label for="married" data-en="Married" data-ru="Женат" data-bg="Женен" data-ro="Căsătorit" class="radio-button" >Married</label>
+
+                            <input type="radio" id="single" name="MARITALSTATUS" value="Single" >
+                            <label for="single" data-en="Single" data-ru="Не женат" data-bg="Неоженен" data-ro="Necăsătorit" class="radio-button">Single</label>
+
+                            <input type="radio" id="livingWithPartner" name="MARITALSTATUS" value="Living with partner" >
+                            <label for="livingWithPartner" data-en="Living with partner" data-ru="Сожительство" data-bg="Съжителство" data-ro="În concubinaj" class="radio-button">Living with partner</label>
+
+                            <input type="radio" id="divorced" name="MARITALSTATUS" value="Divorced" >
+                            <label for="divorced" data-en="Divorced" data-ru="Разведен" data-bg="Разведен" data-ro="Divorțat" class="radio-button">Divorced</label>
+                        </div>
+                    </div>
+
+                   <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            // Call the function on initial load to set the correct display based on any preselected values.
+                            hideSectionForTemporaryVehicles('maritalStatus');
+                            hideSectionForTemporaryVehicles('ukStartDate');
+                            hideSectionForTemporaryVehicles('occupation');
+
+                            // Add more calls here for other sections as necessary
+                        });
+
+                        document.querySelector('form').addEventListener('change', function() {
+                            // Call the function whenever any form input changes to re-evaluate the display settings.
+                            hideSectionForTemporaryVehicles('maritalStatus');
+                            hideSectionForTemporaryVehicles('ukStartDate');
+                            hideSectionForTemporaryVehicles('occupation');
+                            // Add more calls here for other sections as necessary
+                        });
+
+                        function hideSectionForTemporaryVehicles(elementId) {
+                            var section = document.getElementById(elementId);
+                            if (section) { // Check if the element exists to avoid errors
+                                var VehicleType = document.querySelector('input[name="VehicleType"]:checked') ? document.querySelector('input[name="VehicleType"]:checked').value : null;
+                                var tempVehicleTypes = ['Car-Temporary', 'Van-Temporary'];
+                                section.style.display = tempVehicleTypes.includes(VehicleType) ? 'none' : 'block';
+                            } else {
+                                console.error('No element found with ID:', elementId); // Log error if no element found
+                            }
+                        }
+                    </script>
+
+                    <div class="form_wrapper" id="ukStartDateBlock">
+                        <div class="label_wrapper">
+                            <label for="ukStartDate1" data-en="When did you start living in the UK? (Month and Year)" data-ru="Когда вы начали жить в Великобритании? (Месяц и Год)" data-bg="Кога започнахте да живеете във Великобритания? (Месец и Година)" data-ro="Când ați început să trăiți în Marea Britanie? (Lună și An)">
+                                When did you start living in the UK? (Month and Year)
+                            </label>
+
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" id="ukStartDate1" name="UKSTARTDATE" >
+                        </div>
+                    </div>
+
+
+
+                    <div class="form_wrapper" id="occupation">
+                        <div class="label_wrapper">
+                            <label for="occupation" data-en="Current occupation/job" data-ru="Текущая профессия/работа" data-bg="Текуща професия/работа" data-ro="Ocupație/Job curent">Current occupation/job</label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" name="OCCUPATION" pattern="[A-Za-z0-9 ]+" >
+                        </div>
+                    </div>
+
+
+                    <button type="button" id="back-1"
+                            data-en="Back"
+                            data-ru="Назад"
+                            data-bg="Назад"
+                            data-ro="Înapoi">
+                        Back
+                    </button>
+                    <button type="button" id="next-2"
+                            data-en="Next"
+                            data-ru="Вперед"
+                            data-bg="Напред"
+                            data-ro="Următorul">
+                        Next
+                    </button>
+
+
+                </div>
+                <!--Step 3 -->
+
+                <div class="form-step" id="form-step-3" >
+
+
+                    <div class="form_wrapper" id="vehicleRegNumberBlock">
+                        <div class="label_wrapper">
+                            <label for="vehicleRegNumber" data-en="Vehicle Registration Number" data-ru="Регистрационный номер транспортного средства" data-bg="Регистрационен номер на превозно средство" data-ro="Număr de înregistrare a vehiculului">
+                                Vehicle Registration Number
+                            </label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" id="vehicleRegNumber" class="vehicleRegNumber" name="VEHICLEREGNUMBER" pattern="[A-Za-z0-9]{1,}" oninput="this.value = this.value.replace(/[^A-Za-z0-9]/g, '');" >
+                        </div>
+                    </div>
+
+
+
+                    <div class="form_wrapper" id="markModelBlock">
+                        <div class="label_wrapper">
+                            <label for="markModel" data-en="Mark and Model" data-ru="Марка и модель" data-bg="Марка и модел" data-ro="Marca și model">
+                                Mark and Model
+                            </label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" id="markModel" name="MARKMODEL" >
+                        </div>
+                    </div>
+
+                    <div class="form_wrapper" id="buyDateBlock">
+                        <div class="label_wrapper">
+                            <div class="label_wrapper">
+                                <label data-en="When did you buy the vehicle? (Month and Year)" data-ru="Когда вы купили транспортное средство? (Месяц и Год)" data-bg="Кога закупихте превозното средство? (Месец и Година)" data-ro="Când ați cumpărat vehiculul? (Lună și An)">
+                                    When did you buy the vehicle? (Month and Year)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" id="buyDateInput" name="BUYDATE" />
+                        </div>
+                    </div>
+
+                    <script>
+                        // Assume the setupMonthYearInput function is already loaded
+                        document.addEventListener('DOMContentLoaded', function() {
+                            setupMonthYearInput('buyDateInput', 'en'); // Default to English, adjust as per your language handling logic
+                        });
+                    </script>
+
+
+
+                    <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                            // Call the function on initial load to set the correct display based on any preselected values.
+                            hideSectionForTemporaryVehicles('buyDateBlock');
+                            hideSectionForTemporaryVehicles('claimsAccidents');
+                            hideSectionForTemporaryVehicles('convictions');
+                            hideSectionForTemporaryVehicles('descriptionFault');
+                            hideSectionForTemporaryVehicles('claimCostBlock');
+                            hideSectionForTemporaryVehicles('claimDateBlock');
+                            hideSectionForTemporaryVehicles('ncbBlock');
+
+
+
+
+                            // Add more calls here for other sections as necessary
+                        });
+
+                        document.querySelector('form').addEventListener('change', function() {
+                            // Call the function whenever any form input changes to re-evaluate the display settings.
+                            hideSectionForTemporaryVehicles('buyDateBlock');
+                            hideSectionForTemporaryVehicles('claimsAccidents');
+                            hideSectionForTemporaryVehicles('convictions');
+                            hideSectionForTemporaryVehicles('descriptionFault');
+                            hideSectionForTemporaryVehicles('claimCost');
+                            hideSectionForTemporaryVehicles('claimDateBlock');
+                            hideSectionForTemporaryVehicles('ncbBlock');
+                            // Add more calls here for other sections as necessary
+                        });
+
+                        function hideSectionForTemporaryVehicles(elementId) {
+                            var section = document.getElementById(elementId);
+                            if (section) { // Check if the element exists to avoid errors
+                                var VehicleType = document.querySelector('input[name="VehicleType"]:checked') ? document.querySelector('input[name="VehicleType"]:checked').value : null;
+                                var tempVehicleTypes = ['Car-Temporary', 'Van-Temporary'];
+                                section.style.display = tempVehicleTypes.includes(VehicleType) ? 'none' : 'block';
+                            } else {
+                                console.error('No element found with ID:', elementId); // Log error if no element found
+                            }
+                        }
+
+
+
+
+                        document.addEventListener('DOMContentLoaded', function () {
+                            // Prevent selection of future dates
+                            var today = new Date().toISOString().split('T')[0];
+                            document.getElementById('buyDateBlock').setAttribute('max', today);
+                        });
+                    </script>
+
+
+                    <div class="form_wrapper" id="claimsAccidents" style="display: none;">
+                        <div class="label_wrapper">
+                            <label for="claimsAccidents" data-en="Did you have any Claims or Accidents in the UK for the last 5 years?" data-ru="Были ли у вас страховые случаи или аварии в Великобритании за последние 5 лет?" data-bg="Имали ли сте инциденти или други застрахователни случаи във Великобритания през последните 5 години??" data-ro="Ați avut vreo cerere de despăgubire sau accidente în Marea Britanie în ultimii 5 ani?">
+                                Did you have any Claims or Accidents in the UK for the last 5 years?
+                            </label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="radio" id="noClaims" name="CLAIMSACCIDENTS" value="No" >
+                            <label for="noClaims" data-en="No" data-ru="Нет" data-bg="Не" data-ro="Nu" class="radio-button">No</label>
+
+                            <input type="radio" id="yesClaims" name="CLAIMSACCIDENTS" value="Yes" >
+                            <label for="yesClaims" data-en="Yes" data-ru="Да" data-bg="Да" data-ro="Da" class="radio-button">Yes</label>
+                        </div>
+                    </div>
+
+
+                    <div class="form_wrapper" id="claimDescriptionBlock" style="display: none;">
+
+
+                        <div class="label_wrapper"
+                             data-en="Choose type of claim:"
+                             data-ru="Выберите тип требования:"
+                             data-bg="Изберете вид на претенция:"
+                             data-ro="Alegeți tipul cererii:">
+                            Choose type of claim:
+                        </div>
+
+                        <div class="input_wrapper">
+                            <input type="radio" id="accident" name="CLAIMTYPE" value="Accident" >
+                            <label for="accident" data-en="Accident" data-ru="Авария" data-bg="Авария" data-ro="Accident" class="radio-button">Accident</label>
+
+                            <input type="radio" id="theft" name="CLAIMTYPE" value="Theft" >
+                            <label for="theft" data-en="Theft" data-ru="Кража" data-bg="Кражба" data-ro="Furt" class="radio-button">Theft</label>
+
+                            <input type="radio" id="fire" name="CLAIMTYPE" value="Fire" >
+                            <label for="fire" data-en="Fire" data-ru="Огонь" data-bg="Огън" data-ro="Foc" class="radio-button">Fire</label>
+
+                        </div>
+
+                        <div class="form_wrapper" id="descriptionFault" style="display: none;">
+                            <div class="label_wrapper">
+                                <label for="descriptionFault" data-en="b) Who was at fault for the accident?" data-ru="b) Кто был виновник в ДТП?" data-bg="b) Кой беше виновен за инцидента" data-ro="b) Cine a fost vinovat pentru accident">
+                                    b)  Who was at fault for the accident?
+                                </label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="radio" id="myFault" name="DESCRIPTIONFAULT" value="My fault" >
+                                <label for="myFault" data-en="My fault" data-ru="Моя вина" data-bg="Моя грешка" data-ro="Vina mea" class="radio-button">My fault</label>
+
+                                <input type="radio" id="notMyFault" name="DESCRIPTIONFAULT" value="Not my fault" >
+                                <label for="notMyFault" data-en="Not my fault" data-ru="Не моя вина" data-bg="Не е моя грешка" data-ro="Nu e vina mea" class="radio-button">Not my fault</label>
+                            </div>
+                            <div class="label_wrapper">
+                                <label for="claimCost" data-en="c) Claim cost, £" data-ru="c) Стоимость ущерба, £" data-bg="c) Разходи по иска (обезщетение), £" data-ro="c) Costul cererii, £">
+                                    c) Claim cost, £
+                                </label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="text" id="claimCost" name="CLAIMCOST" pattern="[0-9]+(\.[0-9]{1,2})?" oninput="this.value = this.value.replace(/[^0-9.]/g, '');" >
+                            </div><br>
+
+                            <div class="label_wrapper">
+                                <label for="claimDate" data-en="d) Claim date" data-ru="d) Дата происшествия" data-bg="d) Дата на призшествието" data-ro="d) Data cererii">
+                                    d) Claim date
+                                </label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="text" id="claimDate" name="CLAIMDATE" placeholder="DD/MM/YYYY">
+                            </div>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const dateInput = document.getElementById('claimDate');
+
+                                    dateInput.addEventListener('input', function(e) {
+                                        var input = e.target.value.replace(/\D/g,'').slice(0, 8); // Remove non-digits and limit to 8 characters
+                                        var formattedDate = "";
+
+                                        // Iterate over each character in the input
+                                        for (let i = 0; i < input.length; i++) {
+                                            // Add the character to the formattedDate string
+                                            formattedDate += input[i];
+
+                                            // Add a slash after the second and fourth digits
+                                            if (i === 1 || i === 3) {
+                                                formattedDate += '/';
+                                            }
+                                        }
+
+                                        // Update the value of the input with the formatted date
+                                        e.target.value = formattedDate;
+                                    });
+                                });
+                            </script>
+                        </div>
+
+
+                    </div>
+
+                    <script>
+                    document.querySelector('form').addEventListener('change', function () {
+                        var claimsQuestion = document.querySelector('input[name="CLAIMSACCIDENTS"]:checked');
+                        var claimDescriptionBlock = document.getElementById('claimDescriptionBlock');
+
+                        // Display the block if "Yes" is selected
+                        if (claimsQuestion && claimsQuestion.value === 'Yes') {
+                            claimDescriptionBlock.style.display = 'block';
+                        } else {
+                            claimDescriptionBlock.style.display = 'none';
+                        }
+                    });
+                    </script>
+
+
+
+
+
+
+
+
+
+
+                    <script>
+                        document.querySelector('form').addEventListener('change', function () {
+                            var VehicleType = document.querySelector('input[name="VehicleType"]:checked').value;
+                            var claimsQuestion = document.querySelector('input[name="claimsAccidents"]:checked');
+                            var claimCostBlock = document.getElementById('claimCostBlock');
+                            var claimDateBlock = document.getElementById('claimDateBlock');
+
+                            if (claimsQuestion && claimsQuestion.value === 'Yes' && (VehicleType !== 'Car-Temporary' && VehicleType !== 'Van-Temporary')) {
+                                claimCostBlock.style.display = 'block';
+                                claimDateBlock.style.display = 'block';
+                            } else {
+                                claimCostBlock.style.display = 'none';
+                                claimDateBlock.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+
+
+
+
+
+                    <div class="form_wrapper" id="convictions" style="display: none;">
+                        <div class="label_wrapper">
+                            <label for="convictions" data-en="Do you have any motoring Convictions or Penalty points in the last 4 years?"
+                                   data-ru="Есть ли у вас автомобильные правонарушения или штрафные очки за последние 4 года?"
+                                   data-bg="Имате ли нарушения/наказателни точки за последните 4 години?"
+                                   data-ro="Aveți condamnări sau puncte de penalizare auto în ultimii 4 ani?">
+                                Do you have any motoring Convictions or Penalty points in the last 4 years?
+                            </label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="radio" id="convictionsNo" name="CONVICTIONSPOINTS" value="No" >
+                            <label for="convictionsNo" data-en="No" data-ru="Нет" data-bg="Не" data-ro="Nu" class="radio-button">No</label>
+
+                            <input type="radio" id="convictionsYes" name="CONVICTIONSPOINTS" value="Yes" >
+                            <label for="convictionsYes" data-en="Yes" data-ru="Да" data-bg="Да" data-ro="Da" class="radio-button">Yes</label>
+                        </div>
+                    </div>
+
+                    <script>
+                        document.querySelector('form').addEventListener('change', function () {
+                            var VehicleType = document.querySelector('input[name="VehicleType"]:checked').value;
+                            var convictionsQuestions = document.getElementById('convictionsQuestions');
+
+                            if (VehicleType !== 'Car-Temporary' && VehicleType !== 'Van-Temporary') {
+                                convictionsQuestions.style.display = 'block';
+                            } else {
+                                convictionsQuestions.style.display = 'none';
+                            }
+                        });
+                    </script>
+                    <div id="hiddenQuestions" style="display: none;">
+                            <!--  hidden questions about penalties  -->
+                        <div class="form_wrapper" id="licenceNumberBlock" >
+                            <div class="label_wrapper">
+                                <label for="licenceNumber" data-en="a) Driving licence number"
+                                                            data-ru="a) Номер водительского удостоверения (5 пункт на лицевой стороне)"
+                                                            data-bg="a) Номер на шофьорската книжка  (пета точка на лицето на книжката)"
+                                                            data-ro="a) Numărul permisului de conducere">
+                                    a) Driving licence number
+                                </label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="text" id="licenceNumber" name="LICENCENUMBER" >
+                            </div>
+                        </div>
+
+                        <div class="form_wrapper" id="postcodeLicenceBlock" >
+                            <div class="label_wrapper">
+                                <label for="postcodeLicence" data-en="c) Postcode on driving licence"
+                                   data-ru="c) Почтовый индекс (postcode) на водительских правах "
+                                   data-bg="c) Пощенски код на шофьорската книжка"
+                                   data-ro="c) Cod poștal pe permisul de conducere">
+                                    c) Postcode on driving licence
+                                </label>
+
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="text" id="postcodeLicence" name="POSTCODELICENCE" pattern="[A-Za-z0-9]{1,}" oninput="this.value = this.value.replace(/[^A-Za-z0-9]/g, '');" >
+                            </div>
+                        </div>
+
+                        <div class="form_wrapper" id="ninNumberBlock" >
+                            <div class="label_wrapper">
+                                <label for="ninNumber" data-en="b) NIN number" data-ru="b) Номер NIN" data-bg="b) Номер на NIN" data-ro="b) Număr NIN">
+                                    b) NIN number
+                                </label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="text" id="ninNumber" name="NINNUMBER" pattern="[A-Za-z0-9]{9}" oninput="this.value = this.value.replace(/[^A-Za-z0-9]/g, '');" >
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <script>
+                        document.querySelector('form').addEventListener('change', function () {
+                            var convictionsQuestion = document.querySelector('input[name="CONVICTIONSPOINTS"]:checked');
+
+                            if (convictionsQuestion && convictionsQuestion.value === 'Yes') {
+                                document.getElementById('hiddenQuestions').style.display = 'block';
+                            } else {
+                                document.getElementById('hiddenQuestions').style.display = 'none';
+                            }
+                        });
+                    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+                   <div class="form_wrapper" id="ncbBlock" >
+                        <div class="label_wrapper">
+                            <label data-en="Do you have No Claim Bonus (NCB)?" data-ru="У вас есть бонус за безаварийность (NCB)?" data-bg="Имате ли бонус за безаварийност (NCB)?" data-ro="Aveți bonus pentru no claims (NCB)?">
+                                Do you have No Claim Bonus (NCB)?
+                            </label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="radio" id="ncbNo" name="NCB" value="No" >
+                            <label for="ncbNo" data-en="No" data-ru="Нет" data-bg="Не" data-ro="Nu" class="radio-button">No</label>
+
+                            <input type="radio" id="ncbYes" name="NCB" value="Yes" >
+                            <label for="ncbYes" data-en="Yes" data-ru="Да" data-bg="Да" data-ro="Da" class="radio-button">Yes</label>
+                        </div>
+                        <div class="input_wrapper" id="ncbDetails" style="display: none;">
+                            <label for="ncbDetailsInput" data-en="How many years:" data-ru="Сколько лет:" data-bg="Колко години:" data-ro="Câți ani:">
+                                How many years:
+                            </label>
+                            <input type="text" id="ncbDetailsInput" name="ncbDetails" >
+                        </div>
+                    </div>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const ncbYesRadio = document.getElementById('ncbYes');
+                            const ncbNoRadio = document.getElementById('ncbNo');
+                            const ncbDetails = document.getElementById('ncbDetails');
+
+                            // Function to toggle the visibility of NCB details
+                            function toggleNcbDetails(display) {
+                                ncbDetails.style.display = display ? 'block' : 'none';
+                            }
+
+                            // Add event listeners to both Yes and No radio buttons
+                            ncbYesRadio.addEventListener('change', function() {
+                                if (this.checked) {
+                                    toggleNcbDetails(true); // Show details if Yes is checked
+                                }
+                            });
+
+                            ncbNoRadio.addEventListener('change', function() {
+                                if (this.checked) {
+                                    toggleNcbDetails(false); // Hide details if No is checked
+                                }
+                            });
+                        });
+
+                    </script>
+
+
+
+
+
+                    <div class="form_wrapper" id="stopsPerDayBlock" style="display: none;">
+                        <div class="label_wrapper">
+                            <label for="stopsPerDay" data-en="How many stops do you do a day?" data-ru="Сколько доставок вы делаете в день?" data-bg="Колко доставки средно правите на ден?" data-ro="Câte opriri faceți pe zi?">
+                                How many stops do you do a day?
+                            </label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" id="stopsPerDay" name="STOPSPERDAY" >
+                        </div>
+                    </div>
+
+                    <script>
+                        document.querySelector('form').addEventListener('change', function () {
+                            var VehicleType = document.querySelector('input[name="VehicleType"]:checked').value;
+                            var stopsPerDayBlock = document.getElementById('stopsPerDayBlock');
+
+                            if (VehicleType === 'Van-Courier') {
+                                stopsPerDayBlock.style.display = 'block';
+                            } else {
+                                stopsPerDayBlock.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <button type="button" id="back-2"
+                            data-en="Back"
+                            data-ru="Назад"
+                            data-bg="Назад"
+                            data-ro="Înapoi">
+                        Back
+                    </button>
+                    <button type="button" id="next-3"
+                            data-en="Next"
+                            data-ru="Вперед"
+                            data-bg="Напред"
+                            data-ro="Următorul">
+                        Next
+                    </button>
+
+                </div>
+
+
+                <!--Step 4 -->
+
+                <div class="form-step" id="form-step-4" style="display: none;">
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label data-en="Do you need to add a second driver?" data-ru="Вам нужно добавить второго водителя?" data-bg="Трябва ли да добавите втори шофьор?" data-ro="Trebuie să adăugați un al doilea șofer?">
+                                Do you need to add a second driver?
+                            </label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="radio" id="secondDriverYes" name="SECOND_DRIVER" value="Yes">
+                            <label for="secondDriverYes" data-en="Yes" data-ru="Да" data-bg="Да" data-ro="Da" class="radio-button">Yes</label>
+
+                            <input type="radio" id="secondDriverNo" name="SECOND_DRIVER" value="No">
+                            <label for="secondDriverNo" data-en="No" data-ru="Нет" data-bg="Не" data-ro="Nu" class="radio-button">No</label>
+                        </div>
+                    </div>
+
+                    <!-- Details for all types of vehicles when second driver is "yes" -->
+                    <div id="secondDriverDetailsAll" style="display: none;">
+                        <!-- Placeholder for second driver details for all vehicles -->
+                            <div class="form_wrapper">
+                                <div class="label_wrapper">
+                                    <label data-en="Choose the Title of the Second Driver" data-ru="Выберите обращение второго водителя" data-bg="Изберете обръщението на втория шофьор" data-ro="Alegeți titlul celui de-al doilea șofer">Choose the Title of the Second Driver</label>
+                                </div>
+                                <div class="title-options">
+                                    <input type="radio" id="secondDriverMr" name="SECOND_DRIVER_TITLE" value="Mr">
+                                    <label for="secondDriverMr" class="radio-button">Mr</label>
+
+                                    <input type="radio" id="secondDriverMrs" name="SECOND_DRIVER_TITLE" value="Mrs">
+                                    <label for="secondDriverMrs" class="radio-button">Mrs</label>
+
+                                    <input type="radio" id="secondDriverMs" name="SECOND_DRIVER_TITLE" value="Ms">
+                                    <label for="secondDriverMs" class="radio-button">Ms</label>
+
+                                    <input type="radio" id="secondDriverMiss" name="SECOND_DRIVER_TITLE" value="Miss">
+                                    <label for="secondDriverMiss" class="radio-button">Miss</label>
+                                </div>
+                            </div>
+
+                            <div class="form_wrapper">
+                                <div class="label_wrapper">
+                                    <label for="secondDriverFirstName" data-en="Second Driver's First Name" data-ru="Имя второго водителя (на латинице)" data-bg="Първо име на втория шофьор (на латиница)" data-ro="Prenumele celui de-al doilea șofer">Second Driver's First Name</label>
+
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="secondDriverFirstName" name="SECOND_DRIVER_FIRSTNAME" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');">
+                                </div>
+                            </div>
+
+                            <div class="form_wrapper">
+                                <div class="label_wrapper">
+                                    <label for="secondDriverLastName" data-en="Second Driver's Last Name" data-ru="Фамилия второго водителя (на латинице)" data-bg="Фамилно име на втория шофьор (на латиница)" data-ro="Numele de familie al celui de-al doilea șofer">Second Driver's Last Name</label>
+
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="secondDriverLastName" name="SECOND_DRIVER_LASTNAME" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');">
+                                </div>
+                            </div>
+
+                            <div class="form_wrapper">
+                                <div class="label_wrapper">
+                                    <label for="dob2" data-en="Second Driver's Date of Birth" data-ru="Дата рождения второго водителя" data-bg="Дата на раждане на втория шофьор" data-ro="Data nașterii celui de-al doilea șofer">Second Driver's Date of Birth</label>
+
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="dob2" name="DATEOFBIRTH2" class="single-date-field"  title="DD/MM/YYYY" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+
+
+
+                            <div class="form_wrapper">
+                                <div class="label_wrapper">
+                                    <label data-en="Second Driver's Type of Driving Licence" data-ru="Тип водительских прав второго водителя" data-bg="Вид шофьорска книжка на втория шофьор" data-ro="Tipul permisului de conducere al celui de-al doilea șofer">Second Driver's Type of Driving Licence</label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="radio" id="secondDriverUK" name="SECOND_DRIVER_DRIVINGLICENCE" value="UK">
+                                    <label for="secondDriverUK" data-en="UK" data-ru="Великобритания" data-bg="Великобритания" data-ro="Marea Britanie" class="radio-button">UK</label>
+
+                                    <input type="radio" id="secondDriverEU" name="SECOND_DRIVER_DRIVINGLICENCE" value="EU">
+                                    <label for="secondDriverEU" data-en="EU" data-ru="Европейский Союз" data-bg="Европейски съюз" data-ro="Uniunea Europeană" class="radio-button">EU</label>
+
+                                    <input type="radio" id="secondDriverOther" name="SECOND_DRIVER_DRIVINGLICENCE" value="Other">
+                                    <label for="secondDriverOther" data-en="Other" data-ru="Другой" data-bg="Друг" data-ro="Altul" class="radio-button">Other</label>
+
+                                    <!-- Input field for 'Other' will only display when 'Other' is selected -->
+                                    <input type="text" id="secondDriverOtherText" name="SECOND_DRIVER_OTHERTEXT" class="input-text" placeholder="Specify if Other" oninput="this.value = this.value.replace(/[^A-Za-zА-Яа-я ]/g, '');" style="display: none;">
+                                </div>
+                            </div>
+
+                            <div class="form_wrapper" id="secondDriverUkLicenceTypeWrapper" style="display: none;">
+                                <div class="label_wrapper">
+                                    <label data-en="Specify type of UK Driving Licence for the Second Driver" data-ru="Уточните тип водительских прав Великобритании для второго водителя" data-bg="Посочете вида на шофьорската книжка от Великобритания за втория шофьор" data-ro="Specificați tipul permisului de conducere din Marea Britanie pentru al doilea șofer">Specify type of UK Driving Licence for the Second Driver</label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="radio" id="secondDriverFullUKManual" name="SECOND_DRIVER_UK_LICENCE_TYPE" value="Full UK-manual">
+                                    <label for="secondDriverFullUKManual" data-en="UK-manual rights" data-ru="UK-manual права (механическая коробка передач)" data-bg="UK-manual права (механична скоростна кутия)" data-ro="Permis UK-manual (cutie de viteze manuală)" class="radio-button">UK-manual права (механическая коробка передач)</label>
+
+                                    <input type="radio" id="secondDriverFullUKAuto" name="SECOND_DRIVER_UK_LICENCE_TYPE" value="Full UK-auto">
+                                    <label for="secondDriverFullUKAuto" data-en="UK-auto rights" data-ru="UK-auto права (автоматическая коробка передач)" data-bg="UK-auto права (автоматична скоростна кутия)" data-ro="Permis UK-auto (cutie de viteze automată)" class="radio-button">UK-auto права (автоматическая коробка передач)</label>
+
+                                    <input type="radio" id="secondDriverUkProvisional" name="SECOND_DRIVER_UK_LICENCE_TYPE" value="UK Provisional">
+                                    <label for="secondDriverUkProvisional" data-en="UK Provisional" data-ru="UK Provissional - (учебные права Великобритании)" data-bg="UK Provisional - (учебна книжка Великобритания)" data-ro="Permis provizoriu din Marea Britanie" class="radio-button">UK Provissional - (учебные права Великобритании)</label>
+                                </div>
+                            </div>
+
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const radios = document.querySelectorAll('input[name="SECOND_DRIVER_DRIVINGLICENCE"]');
+                                    const otherTextInput = document.getElementById('secondDriverOtherText');
+                                    const secondDriverUkLicenceTypeWrapper = document.getElementById('secondDriverUkLicenceTypeWrapper');
+
+                                    radios.forEach(radio => {
+                                        radio.addEventListener('change', function() {
+                                            if (document.getElementById('secondDriverOther').checked) {
+                                                otherTextInput.style.display = 'block'; // Show the text input
+                                            } else {
+                                                otherTextInput.style.display = 'none'; // Hide the text input
+                                                otherTextInput.value = ''; // Clear the value if 'Other' is not selected
+                                            }
+
+                                            if (document.getElementById('secondDriverUK').checked) {
+                                                secondDriverUkLicenceTypeWrapper.style.display = 'block'; // Show the UK licence type options
+                                            } else {
+                                                secondDriverUkLicenceTypeWrapper.style.display = 'none'; // Hide the UK licence type options
+                                                document.querySelectorAll('input[name="SECOND_DRIVER_UK_LICENCE_TYPE"]').forEach(el => el.checked = false); // Clear the value if 'UK' is not selected
+                                            }
+                                        });
+                                    });
+                                });
+                            </script>
+
+
+                        <div class="form_wrapper" id="secondDriverDrivingLicenceQuestions" style="display: none;">
+                                <div id="secondDriverQuestionsBlock1">
+                                    <div class="label_wrapper">
+                                        <label for="secondDriverLicenceDateA" data-en="Date when second driver passed their first driving test category A?" data-ru="Дата прохождения первого экзамена по вождению категории А вторым водителем?" data-bg="Дата на първия изпит по шофиране категория А от втория шофьор?" data-ro="Data la care al doilea șofer a trecut primul test de conducere categoria A?">Date when second driver passed their first driving test category A?</label>
+                                    </div>
+                                    <div class="input_wrapper">
+                                        <input type="text" id="secondDriverLicenceDateA" name="SECOND_DRIVER_LICENCEDATEA" placeholder="DD/MM/YYYY">
+                                    </div>
+                                </div>
+
+                            <div id="secondDriverQuestionsBlock2">
+                                <div class="label_wrapper">
+                                    <label for="secondDriverLicenceDateB" data-en="Date when second driver passed their first driving test category B?" data-ru="Дата прохождения первого экзамена по вождению категории B вторым водителем?" data-bg="Дата на първия изпит по шофиране категория B от втория шофьор?" data-ro="Data la care al doilea șofer a trecut primul test de conducere categoria B?">Date when second driver passed their first driving test category B?</label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="secondDriverLicenceDateB" name="SECOND_DRIVER_LICENCEDATEB" placeholder="DD/MM/YYYY">
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                document.querySelector('form').addEventListener('change', updateSecondDriverDisplay);
+
+                                function updateSecondDriverDisplay() {
+                                    var VehicleType = document.querySelector('input[name="VehicleType"]:checked') ? document.querySelector('input[name="VehicleType"]:checked').value : null;
+
+                                    document.getElementById('secondDriverDrivingLicenceQuestions').style.display = VehicleType ? 'block' : 'none';
+
+                                    if (VehicleType === 'Motorbike') {
+                                        document.getElementById('secondDriverQuestionsBlock1').style.display = 'block';
+
+                                    } else if (VehicleType) {
+                                        document.getElementById('secondDriverQuestionsBlock1').style.display = 'none';
+
+                                    } else {
+                                        document.getElementById('secondDriverQuestionsBlock1').style.display = 'none';
+                                        document.getElementById('secondDriverQuestionsBlock2').style.display = 'none';
+                                    }
+                                }
+                            });
+                        </script>
+
+                                        <!-- Additional details for non-temporary vehicles when second driver is "yes" -->
+                    <div id="secondDriverDetailsNonTemporary" style="display: none;">
+                        <!-- Placeholder for additional second driver details for non-temporary vehicles -->
+                        <div class="form_wrapper" id="secondDriverMaritalStatus" style="display: none;">
+                            <div class="label_wrapper">
+                                <label for="secondDriverMaritalStatus" data-en="Second Driver's Marital Status" data-ru="Семейное положение второго водителя" data-bg="Семейно положение на втория шофьор" data-ro="Starea civilă a celui de-al doilea șofer">Second Driver's Marital Status</label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="radio" id="secondDriverMarried" name="SECOND_DRIVER_MARITALSTATUS" value="Married">
+                                <label for="secondDriverMarried" data-en="Married" data-ru="Женат" data-bg="Женен" data-ro="Căsătorit" class="radio-button">Married</label>
+
+                                <input type="radio" id="secondDriverSingle" name="SECOND_DRIVER_MARITALSTATUS" value="Single">
+                                <label for="secondDriverSingle" data-en="Single" data-ru="Не женат" data-bg="Неоженен" data-ro="Necăsătorit" class="radio-button">Single</label>
+
+                                <input type="radio" id="secondDriverLivingWithPartner" name="SECOND_DRIVER_MARITALSTATUS" value="Living with partner">
+                                <label for="secondDriverLivingWithPartner" data-en="Living with partner" data-ru="Сожительство" data-bg="Съжителство" data-ro="În concubinaj" class="radio-button">Living with partner</label>
+
+                                <input type="radio" id="secondDriverDivorced" name="SECOND_DRIVER_MARITALSTATUS" value="Divorced">
+                                <label for="secondDriverDivorced" data-en="Divorced" data-ru="Разведен" data-bg="Разведен" data-ro="Divorțat" class="radio-button">Divorced</label>
+                            </div>
+                        </div>
+
+                        <div class="form_wrapper" id="secondDriverUkStartDateBlock">
+                            <div class="label_wrapper">
+                                <label data-en="When did the second driver start living in the UK? (Month and Year)" data-ru="Когда второй водитель начал жить в Великобритании? (Месяц и Год)" data-bg="Кога вторият шофьор започна да живее във Великобритания? (Месец и Година)" data-ro="Când a început al doilea șofer să trăiască în Marea Britanie? (Lună și An)">
+                                    When did the second driver start living in the UK? (Month and Year)
+                                </label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="text"  name="SECOND_DRIVER_UKSTARTDATE">
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="form_wrapper" id="secondDriverOccupation">
+                            <div class="label_wrapper">
+                                <label for="secondDriverOccupation" data-en="Second Driver's Current occupation/job" data-ru="Текущая профессия/работа второго водителя" data-bg="Текуща професия/работа на втория шофьор" data-ro="Ocupație/Job curent al celui de-al doilea șofer">Second Driver's Current occupation/job</label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="text"  name="SECOND_DRIVER_OCCUPATION" pattern="[A-Za-z0-9 ]+" >
+                            </div>
+                        </div>
+
+
+
+                        <div class="form_wrapper" id="secondDriverClaimsAccidents" >
+                            <div class="label_wrapper">
+                                <label for="secondDriverClaimsAccidents" data-en="Did the second driver have any Claims or Accidents in the UK for the last 5 years?"
+                                    data-ru="Были ли у второго водителя страховые случаи или аварии в Великобритании за последние 5 лет?"
+                                    data-bg="Има ли вторият шофьор инциденти или други застрахователни случаи във Великобритания през последните 5 години?"
+                                    data-ro="A avut al doilea șofer vreo cerere de despăgubire sau accidente în Marea Britanie în ultimii 5 ani?">
+                                    Did the second driver have any Claims or Accidents in the UK for the last 5 years?
+                                </label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="radio" id="secondDriverNoClaims" name="SECOND_DRIVER_CLAIMSACCIDENTS" value="No">
+                                <label for="secondDriverNoClaims" data-en="No" data-ru="Нет" data-bg="Не" data-ro="Nu" class="radio-button">No</label>
+
+                                <input type="radio" id="secondDriverYesClaims" name="SECOND_DRIVER_CLAIMSACCIDENTS" value="Yes">
+                                <label for="secondDriverYesClaims" data-en="Yes" data-ru="Да" data-bg="Да" data-ro="Da" class="radio-button">Yes</label>
+                            </div>
+                        </div>
+
+                        <div class="form_wrapper" id="secondDriverClaimDescriptionBlock" style="display: none;">
+
+
+                            <div class="label_wrapper">Choose type of claim:</div>
+                            <div class="input_wrapper">
+                                <input type="radio" id="secondDriverAccident" name="SECOND_DRIVER_CLAIMTYPE" value="Accident">
+                                <label for="secondDriverAccident" data-en="Accident" data-ru="Авария" data-bg="Авария" data-ro="Accident" class="radio-button">Accident</label>
+
+                                <input type="radio" id="secondDriverTheft" name="SECOND_DRIVER_CLAIMTYPE" value="Theft">
+                                <label for="secondDriverTheft" data-en="Theft" data-ru="Кража" data-bg="Кражба" data-ro="Furt" class="radio-button">Theft</label>
+
+                                <input type="radio" id="secondDriverFire" name="SECOND_DRIVER_CLAIMTYPE" value="Fire">
+                                <label for="secondDriverFire" data-en="Fire" data-ru="Огонь" data-bg="Огън" data-ro="Foc" class="radio-button">Fire</label>
+                            </div>
+
+                            <div class="form_wrapper" id="secondDriverDescriptionFault" >
+                                <div class="label_wrapper">
+                                    <label for="secondDriverDescriptionFault" data-en="b) Who was at fault for the accident?" data-ru="b) Кто был виновник в ДТП?" data-bg="b) Кой беше виновен за инцидента" data-ro="b) Cine a fost vinovat pentru accident">
+                                        b) Who was at fault for the accident?
+                                    </label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="radio" id="secondDriverMyFault" name="SECOND_DRIVER_DESCRIPTIONFAULT" value="My fault">
+                                    <label for="secondDriverMyFault" data-en="My fault" data-ru="Моя вина" data-bg="Моя грешка" data-ro="Vina mea" class="radio-button">My fault</label>
+
+                                    <input type="radio" id="secondDriverNotMyFault" name="SECOND_DRIVER_DESCRIPTIONFAULT" value="Not my fault">
+                                    <label for="secondDriverNotMyFault" data-en="Not my fault" data-ru="Не моя вина" data-bg="Не е моя грешка" data-ro="Nu e vina mea" class="radio-button">Not my fault</label>
+                                </div>
+                                <div class="label_wrapper">
+                                    <label for="secondDriverClaimCost" data-en="c) Claim cost, £" data-ru="c) Стоимость ущерба, £" data-bg="c) Разходи по иска (обезщетение), £, £" data-ro="c) Costul cererii, £">
+                                        c) Claim cost, £
+                                    </label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="secondDriverClaimCost" name="SECOND_DRIVER_CLAIMCOST" pattern="[0-9]+(\.[0-9]{1,2})?" oninput="this.value = this.value.replace(/[^0-9.]/g, '');">
+                                </div><br>
+
+                                <div class="label_wrapper">
+                                    <label for="secondDriverClaimDate" data-en="d) Claim date" data-ru="d) Дата происшествия" data-bg="d) Дата на призшествието" data-ro="d) Data cererii">
+                                        d) Claim date
+                                    </label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="secondDriverClaimDate" name="SECOND_DRIVER_CLAIMDATE" placeholder="DD/MM/YYYY">
+                                </div>
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function() {
+                                        const dateInput = document.getElementById('secondDriverClaimDate');
+
+                                        dateInput.addEventListener('input', function(e) {
+                                            var input = e.target.value.replace(/\D/g, '').slice(0, 8); // Remove non-digits and limit to 8 characters
+                                            var formattedDate = "";
+
+                                            // Iterate over each character in the input
+                                            for (let i = 0; i < input.length; i++) {
+                                                // Add the character to the formattedDate string
+                                                formattedDate += input[i];
+
+                                                // Add a slash after the second and fourth digits
+                                                if (i === 1 || i === 3) {
+                                                    formattedDate += '/';
+                                                }
+                                            }
+
+                                            // Update the value of the input with the formatted date
+                                            e.target.value = formattedDate;
+                                        });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+
+                        <script>
+                            document.querySelector('form').addEventListener('change', function () {
+                                var secondDriverClaimsQuestion = document.querySelector('input[name="SECOND_DRIVER_CLAIMSACCIDENTS"]:checked');
+                                var secondDriverClaimDescriptionBlock = document.getElementById('secondDriverClaimDescriptionBlock');
+
+                                // Display the block if "Yes" is selected
+                                if (secondDriverClaimsQuestion && secondDriverClaimsQuestion.value === 'Yes') {
+                                    secondDriverClaimDescriptionBlock.style.display = 'block';
+                                } else {
+                                    secondDriverClaimDescriptionBlock.style.display = 'none';
+                                }
+                            });
+                        </script>
+
+                        <script>
+                            document.querySelector('form').addEventListener('change', function () {
+                                var VehicleType = document.querySelector('input[name="VehicleType"]:checked')?.value;
+                                var secondDriverClaimsQuestion = document.querySelector('input[name="SECOND_DRIVER_CLAIMSACCIDENTS"]:checked');
+                                var secondDriverClaimCostBlock = document.getElementById('secondDriverClaimCostBlock');
+                                var secondDriverClaimDateBlock = document.getElementById('secondDriverClaimDateBlock');
+
+                                if (secondDriverClaimsQuestion && secondDriverClaimsQuestion.value === 'Yes' && (VehicleType !== 'Car-Temporary' && VehicleType !== 'Van-Temporary')) {
+                                    secondDriverClaimCostBlock.style.display = 'block';
+                                    secondDriverClaimDateBlock.style.display = 'block';
+                                } else {
+                                    secondDriverClaimCostBlock.style.display = 'none';
+                                    secondDriverClaimDateBlock.style.display = 'none';
+                                }
+                            });
+                        </script>
+
+                        <div class="form_wrapper" id="secondDriverConvictions" style="display: none;">
+                            <div class="label_wrapper">
+                                <label for="secondDriverConvictions" data-en="Does the second driver have any motoring Convictions or Penalty points in the last 4 years?"
+                                    data-ru="Есть ли у второго водителя автомобильные правонарушения или штрафные очки за последние 4 года?"
+                                    data-bg="Има ли вторият шофьор нарушения/наказателни точки за последните 4 години?"
+                                    data-ro="Are al doilea șofer condamnări sau puncte de penalizare auto în ultimii 4 ani?">
+                                    Does the second driver have any motoring Convictions or Penalty points in the last 4 years?
+                                </label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="radio" id="secondDriverConvictionsNo" name="SECOND_DRIVER_CONVICTIONSPOINTS" value="No">
+                                <label for="secondDriverConvictionsNo" data-en="No" data-ru="Нет" data-bg="Не" data-ro="Nu" class="radio-button">No</label>
+
+                                <input type="radio" id="secondDriverConvictionsYes" name="SECOND_DRIVER_CONVICTIONSPOINTS" value="Yes">
+                                <label for="secondDriverConvictionsYes" data-en="Yes" data-ru="Да" data-bg="Да" data-ro="Da" class="radio-button">Yes</label>
+                            </div>
+                        </div>
+
+                        <div id="secondDriverHiddenQuestions" style="display: none;">
+                            <!-- Hidden questions about penalties for the second driver -->
+                            <div class="form_wrapper" id="secondDriverLicenceNumberBlock">
+                                <div class="label_wrapper">
+                                    <label for="secondDriverLicenceNumber" data-en="a) Second driver's driving licence number"
+                                        data-ru="a) Номер водительского удостоверения второго водителя (5 пункт на лицевой стороне)"
+                                        data-bg="a) Номер на шофьорската книжка на втория шофьор (пета точка на лицето на книжката)"
+                                        data-ro="a) Numărul permisului de conducere al celui de-al doilea șofer">
+                                        a) Second driver's driving licence number
+                                    </label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="secondDriverLicenceNumber" name="SECOND_DRIVER_LICENCENUMBER">
+                                </div>
+                            </div>
+
+                            <div class="form_wrapper" id="secondDriverPostcodeLicenceBlock">
+                                <div class="label_wrapper">
+                                    <label for="secondDriverPostcodeLicence" data-en="c) Second driver's postcode on driving licence"
+                                        data-ru="c) Почтовый индекс (postcode) на водительских правах второго водителя"
+                                        data-bg="c) Пощенски код на шофьорската книжка на втория шофьор"
+                                        data-ro="c) Cod poștal pe permisul de conducere al celui de-al doilea șofer">
+                                        c) Second driver's postcode on driving licence
+                                    </label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="secondDriverPostcodeLicence" name="SECOND_DRIVER_POSTCODELICENCE" pattern="[A-Za-z0-9]{1,}" oninput="this.value = this.value.replace(/[^A-Za-z0-9]/g, '');">
+                                </div>
+                            </div>
+
+                            <div class="form_wrapper" id="secondDriverNinNumberBlock">
+                                <div class="label_wrapper">
+                                    <label for="secondDriverNinNumber" data-en="b) Second driver's NIN number"
+                                        data-ru="b) Номер NIN второго водителя"
+                                        data-bg="b) Номер на NIN на втория шофьор"
+                                        data-ro="b) Număr NIN al celui de-al doilea șofer">
+                                        b) Second driver's NIN number
+                                    </label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="secondDriverNinNumber" name="SECOND_DRIVER_NINNUMBER" pattern="[A-Za-z0-9]{9}" oninput="this.value = this.value.replace(/[^A-Za-z0-9]/g, '');">
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            document.querySelector('form').addEventListener('change', function () {
+                                var vehicleType = document.querySelector('input[name="VehicleType"]:checked')?.value;
+                                var secondDriverConvictions = document.getElementById('secondDriverConvictions');
+
+                                if (vehicleType && vehicleType !== 'Car-Temporary' && vehicleType !== 'Van-Temporary') {
+                                    secondDriverConvictions.style.display = 'block';
+                                } else {
+                                    secondDriverConvictions.style.display = 'none';
+                                    document.getElementById('secondDriverHiddenQuestions').style.display = 'none';
+                                }
+
+                                var secondDriverConvictionsQuestion = document.querySelector('input[name="SECOND_DRIVER_CONVICTIONSPOINTS"]:checked');
+                                if (secondDriverConvictionsQuestion && secondDriverConvictionsQuestion.value === 'Yes') {
+                                    document.getElementById('secondDriverHiddenQuestions').style.display = 'block';
+                                } else {
+                                    document.getElementById('secondDriverHiddenQuestions').style.display = 'none';
+                                }
+                            });
+                        </script>
+
+
+
+
+                    </div>
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const secondDriverYes = document.getElementById('secondDriverYes');
+                        const secondDriverNo = document.getElementById('secondDriverNo');
+                        const secondDriverDetailsAll = document.getElementById('secondDriverDetailsAll');
+                        const secondDriverDetailsNonTemporary = document.getElementById('secondDriverDetailsNonTemporary');
+
+                        function toggleSecondDriverDetails() {
+                            const vehicleType = document.querySelector('input[name="VehicleType"]:checked') ? document.querySelector('input[name="VehicleType"]:checked').value : null;
+                            const isTemporary = vehicleType === 'Car-Temporary' || vehicleType === 'Van-Temporary';
+
+                            if (secondDriverYes.checked) {
+                                secondDriverDetailsAll.style.display = 'block';
+                                if (!isTemporary) {
+                                    secondDriverDetailsNonTemporary.style.display = 'block';
+                                } else {
+                                    secondDriverDetailsNonTemporary.style.display = 'none';
+                                }
+                            } else {
+                                secondDriverDetailsAll.style.display = 'none';
+                                secondDriverDetailsNonTemporary.style.display = 'none';
+                            }
+                        }
+
+                        secondDriverYes.addEventListener('change', toggleSecondDriverDetails);
+                        secondDriverNo.addEventListener('change', toggleSecondDriverDetails);
+
+                        // Also add event listeners for vehicle type changes
+                        const vehicleTypeRadios = document.querySelectorAll('input[name="VehicleType"]');
+                        vehicleTypeRadios.forEach(radio => {
+                            radio.addEventListener('change', toggleSecondDriverDetails);
+                        });
+
+                        // Initialize the visibility based on default selection
+                        toggleSecondDriverDetails();
+                    });
+                    </script>
+
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label data-en="Do you need to add a third driver?" data-ru="Вам нужно добавить третьего водителя?" data-bg="Трябва ли да добавите трети шофьор?" data-ro="Trebuie să adăugați un al treilea șofer?">
+                                Do you need to add a third driver?
+                            </label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="radio" id="thirdDriverYes" name="THIRD_DRIVER" value="Yes">
+                            <label for="thirdDriverYes" data-en="Yes" data-ru="Да" data-bg="Да" data-ro="Da" class="radio-button">Yes</label>
+
+                            <input type="radio" id="thirdDriverNo" name="THIRD_DRIVER" value="No">
+                            <label for="thirdDriverNo" data-en="No" data-ru="Нет" data-bg="Не" data-ro="Nu" class="radio-button">No</label>
+                        </div>
+                    </div>
+
+
+
+
+
+                    </div>
+
+                    <!-- Placeholder for third driver details for all vehicles -->
+                    <div id="thirdDriverDetailsAll" style="display: none;">
+        <div class="form_wrapper">
+            <div class="label_wrapper">
+                <label data-en="Choose the Title of the Third Driver" data-ru="Выберите обращение третьего водителя" data-bg="Изберете обръщението на третия шофьор" data-ro="Alegeți titlul celui de-al treilea șofer">Choose the Title of the Third Driver</label>
+            </div>
+            <div class="title-options">
+                <input type="radio" id="thirdDriverMr" name="THIRD_DRIVER_TITLE" value="Mr">
+                <label for="thirdDriverMr" class="radio-button">Mr</label>
+
+                <input type="radio" id="thirdDriverMrs" name="THIRD_DRIVER_TITLE" value="Mrs">
+                <label for="thirdDriverMrs" class="radio-button">Mrs</label>
+
+                <input type="radio" id="thirdDriverMs" name="THIRD_DRIVER_TITLE" value="Ms">
+                <label for="thirdDriverMs" class="radio-button">Ms</label>
+
+                <input type="radio" id="thirdDriverMiss" name="THIRD_DRIVER_TITLE" value="Miss">
+                <label for="thirdDriverMiss" class="radio-button">Miss</label>
+            </div>
+        </div>
+
+        <div class="form_wrapper">
+            <div class="label_wrapper">
+                <label for="thirdDriverFirstName" data-en="Third Driver's First Name" data-ru="Имя третьего водителя (на латинице)" data-bg="Първо име на третия шофьор (на латиница)" data-ro="Prenumele celui de-al treilea șofer">Third Driver's First Name</label>
+            </div>
+            <div class="input_wrapper">
+                <input type="text" id="thirdDriverFirstName" name="THIRD_DRIVER_FIRSTNAME" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');">
+            </div>
+        </div>
+
+        <div class="form_wrapper">
+            <div class="label_wrapper">
+                <label for="thirdDriverLastName" data-en="Third Driver's Last Name" data-ru="Фамилия третьего водителя (на латинице)" data-bg="Фамилно име на третия шофьор (на латиница)" data-ro="Numele de familie al celui de-al treilea șofer">Third Driver's Last Name</label>
+            </div>
+            <div class="input_wrapper">
+                <input type="text" id="thirdDriverLastName" name="THIRD_DRIVER_LASTNAME" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');">
+            </div>
+        </div>
+
+        <div class="form_wrapper">
+            <div class="label_wrapper">
+                <label for="dob3" data-en="Third Driver's Date of Birth" data-ru="Дата рождения третьего водителя" data-bg="Дата на раждане на третия шофьор" data-ro="Data nașterii celui de-al treilea șofer">Third Driver's Date of Birth</label>
+            </div>
+            <div class="input_wrapper">
+                <input type="text" id="dob3" name="DATEOFBIRTH3" class="single-date-field" title="DD/MM/YYYY" placeholder="DD/MM/YYYY">
+            </div>
+        </div>
+
+        <div class="form_wrapper">
+            <div class="label_wrapper">
+                <label data-en="Third Driver's Type of Driving Licence" data-ru="Тип водительских прав третьего водителя" data-bg="Вид шофьорска книжка на третия шофьор" data-ro="Tipul permisului de conducere al celui de-al treilea șofer">Third Driver's Type of Driving Licence</label>
+            </div>
+            <div class="input_wrapper">
+                <input type="radio" id="thirdDriverUK" name="THIRD_DRIVER_DRIVINGLICENCE" value="UK">
+                <label for="thirdDriverUK" data-en="UK" data-ru="Великобритания" data-bg="Великобритания" data-ro="Marea Britanie" class="radio-button">UK</label>
+
+                <input type="radio" id="thirdDriverEU" name="THIRD_DRIVER_DRIVINGLICENCE" value="EU">
+                <label for="thirdDriverEU" data-en="EU" data-ru="Европейский Союз" data-bg="Европейски съюз" data-ro="Uniunea Europeană" class="radio-button">EU</label>
+
+                <input type="radio" id="thirdDriverOther" name="THIRD_DRIVER_DRIVINGLICENCE" value="Other">
+                <label for="thirdDriverOther" data-en="Other" data-ru="Другой" data-bg="Друг" data-ro="Altul" class="radio-button">Other</label>
+
+                <!-- Поле для ввода 'Other' будет отображаться только при выборе 'Other' -->
+                <input type="text" id="thirdDriverOtherText" name="THIRD_DRIVER_OTHERTEXT" class="input-text" placeholder="Specify if Other" oninput="this.value = this.value.replace(/[^A-Za-zА-Яа-я ]/g, '');" style="display: none;">
+            </div>
+        </div>
+
+        <div class="form_wrapper" id="thirdDriverUkLicenceTypeWrapper" style="display: none;">
+            <div class="label_wrapper">
+                <label data-en="Specify type of UK Driving Licence for the Third Driver" data-ru="Уточните тип водительских прав Великобритании для третьего водителя" data-bg="Посочете вида на шофьорската книжка от Великобритания за третия шофьор" data-ro="Specificați tipul permisului de conducere din Marea Britanie pentru al treilea șofer">Specify type of UK Driving Licence for the Third Driver</label>
+            </div>
+            <div class="input_wrapper">
+                <input type="radio" id="thirdDriverFullUKManual" name="THIRD_DRIVER_UK_LICENCE_TYPE" value="Full UK-manual">
+                <label for="thirdDriverFullUKManual" data-en="UK-manual rights" data-ru="UK-manual права (механическая коробка передач)" data-bg="UK-manual права (механична скоростна кутия)" data-ro="Permis UK-manual (cutie de viteze manuală)" class="radio-button">UK-manual права (механическая коробка передач)</label>
+
+                <input type="radio" id="thirdDriverFullUKAuto" name="THIRD_DRIVER_UK_LICENCE_TYPE" value="Full UK-auto">
+                <label for="thirdDriverFullUKAuto" data-en="UK-auto rights" data-ru="UK-auto права (автоматическая коробка передач)" data-bg="UK-auto права (автоматична скоростна кутия)" data-ro="Permis UK-auto (cutie de viteze automată)" class="radio-button">UK-auto права (автоматическая коробка передач)</label>
+
+                <input type="radio" id="thirdDriverUkProvisional" name="THIRD_DRIVER_UK_LICENCE_TYPE" value="UK Provisional">
+                <label for="thirdDriverUkProvisional" data-en="UK Provisional" data-ru="UK Provissional - (учебные права Великобритании)" data-bg="UK Provisional - (учебна книжка Великобритания)" data-ro="Permis provizoriu din Marea Britanie" class="radio-button">UK Provissional - (учебные права Великобритании)</label>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const radios = document.querySelectorAll('input[name="THIRD_DRIVER_DRIVINGLICENCE"]');
+                const otherTextInput = document.getElementById('thirdDriverOtherText');
+                const thirdDriverUkLicenceTypeWrapper = document.getElementById('thirdDriverUkLicenceTypeWrapper');
+
+                radios.forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        if (document.getElementById('thirdDriverOther').checked) {
+                            otherTextInput.style.display = 'block'; // Показать текстовое поле
+                        } else {
+                            otherTextInput.style.display = 'none'; // Скрыть текстовое поле
+                            otherTextInput.value = ''; // Очистить значение, если 'Other' не выбрано
+                        }
+
+                        if (document.getElementById('thirdDriverUK').checked) {
+                            thirdDriverUkLicenceTypeWrapper.style.display = 'block'; // Показать опции UK лицензий
+                        } else {
+                            thirdDriverUkLicenceTypeWrapper.style.display = 'none'; // Скрыть опции UK лицензий
+                            document.querySelectorAll('input[name="THIRD_DRIVER_UK_LICENCE_TYPE"]').forEach(el => el.checked = false); // Очистить значения, если 'UK' не выбрано
+                        }
+                    });
+                });
+            });
+        </script>
+
+
+        <div class="form_wrapper" id="thirdDriverDrivingLicenceQuestions" style="display: none;">
+            <div id="thirdDriverQuestionsBlock1">
+                <div class="label_wrapper">
+                    <label for="thirdDriverLicenceDateA" data-en="Date when third driver passed their first driving test category A?" data-ru="Дата прохождения первого экзамена по вождению категории А третьим водителем?" data-bg="Дата на първия изпит по шофиране категория А от третия шофьор?" data-ro="Data la care al treilea șofer a trecut primul test de conducere categoria A?">Date when third driver passed their first driving test category A?</label>
+                </div>
+                <div class="input_wrapper">
+                    <input type="text" id="thirdDriverLicenceDateA" name="THIRD_DRIVER_LICENCEDATEA" placeholder="DD/MM/YYYY">
+                </div>
+            </div>
+
+            <div id="thirdDriverQuestionsBlock2">
+                <div class="label_wrapper">
+                    <label for="thirdDriverLicenceDateB" data-en="Date when third driver passed their first driving test category B?" data-ru="Дата прохождения первого экзамена по вождению категории B третьим водителем?" data-bg="Дата на първия изпит по шофиране категория B от третия шофьор?" data-ro="Data la care al treilea șofer a trecut primul test de conducere categoria B?">Date when third driver passed their first driving test category B?</label>
+                </div>
+                <div class="input_wrapper">
+                    <input type="text" id="thirdDriverLicenceDateB" name="THIRD_DRIVER_LICENCEDATEB" placeholder="DD/MM/YYYY">
+                </div>
+            </div>
+        </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('form').addEventListener('change', updateThirdDriverDisplay);
+
+            function updateThirdDriverDisplay() {
+                var VehicleType = document.querySelector('input[name="VehicleType"]:checked') ? document.querySelector('input[name="VehicleType"]:checked').value : null;
+
+                document.getElementById('thirdDriverDrivingLicenceQuestions').style.display = VehicleType ? 'block' : 'none';
+
+                if (VehicleType === 'Motorbike') {
+                    document.getElementById('thirdDriverQuestionsBlock1').style.display = 'block';
+                    document.getElementById('thirdDriverQuestionsBlock2').style.display = 'block';
+                } else if (VehicleType) {
+                    document.getElementById('thirdDriverQuestionsBlock1').style.display = 'none';
+                    document.getElementById('thirdDriverQuestionsBlock2').style.display = 'block';
+                } else {
+                    document.getElementById('thirdDriverQuestionsBlock1').style.display = 'none';
+
+                    document.getElementById('thirdDriverQuestionsBlock2').style.display = 'none';
+                }
+            }
+        });
+        </script>
+    </div>
+
+                    <div id="thirdDriverDetailsNonTemporary" style="display: none;">
+                        <!-- Placeholder for additional third driver details for non-temporary vehicles -->
+                        <div class="form_wrapper" id="thirdDriverMaritalStatus" style="display: none;">
+                            <div class="label_wrapper">
+                                <label for="thirdDriverMaritalStatus" data-en="Third Driver's Marital Status" data-ru="Семейное положение третьего водителя" data-bg="Семейно положение на третия шофьор" data-ro="Starea civilă a celui de-al treilea șofer">Third Driver's Marital Status</label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="radio" id="thirdDriverMarried" name="THIRD_DRIVER_MARITALSTATUS" value="Married">
+                                <label for="thirdDriverMarried" data-en="Married" data-ru="Женат" data-bg="Женен" data-ro="Căsătorit" class="radio-button">Married</label>
+
+                                <input type="radio" id="thirdDriverSingle" name="THIRD_DRIVER_MARITALSTATUS" value="Single">
+                                <label for="thirdDriverSingle" data-en="Single" data-ru="Не женат" data-bg="Неоженен" data-ro="Necăsătorит" class="radio-button">Single</label>
+
+                                <input type="radio" id="thirdDriverLivingWithPartner" name="THIRD_DRIVER_MARITALSTATUS" value="Living with partner">
+                                <label for="thirdDriverLivingWithPartner" data-en="Living with partner" data-ru="Сожительство" data-bg="Съжителство" data-ro="În concubinaj" class="radio-button">Living with partner</label>
+
+                                <input type="radio" id="thirdDriverDivorced" name="THIRD_DRIVER_MARITALSTATUS" value="Divorced">
+                                <label for="thirdDriverDivorced" data-en="Divorced" data-ru="Разведен" data-bg="Разведен" data-ro="Divorțat" class="radio-button">Divorced</label>
+                            </div>
+                        </div>
+
+                        <div class="form_wrapper" id="thirdDriverUkStartDateBlock">
+                            <div class="label_wrapper">
+                                <label data-en="When did the third driver start living in the UK? (Month and Year)" data-ru="Когда третий водитель начал жить в Великобритании? (Месяц и Год)" data-bg="Кога третият шофьор започна да живее във Великобритания? (Месец и Година)" data-ro="Când a început al treilea șofer să trăiască în Marea Britanie? (Lună și An)">
+                                    When did the third driver start living in the UK? (Month and Year)
+                                </label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="text" name="THIRD_DRIVER_UKSTARTDATE">
+                            </div>
+                        </div>
+
+                        <div class="form_wrapper" id="thirdDriverOccupation">
+                            <div class="label_wrapper">
+                                <label for="thirdDriverOccupation" data-en="Third Driver's Current occupation/job" data-ru="Текущая профессия/работа третьего водителя" data-bg="Текуща професия/работа на третия шофьор" data-ro="Ocupație/Job curent al celui de-al treilea șofer">Third Driver's Current occupation/job</label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="text" name="THIRD_DRIVER_OCCUPATION" pattern="[A-Za-z0-9 ]+">
+                            </div>
+                        </div>
+
+                        <div class="form_wrapper" id="thirdDriverClaimsAccidents">
+                            <div class="label_wrapper">
+                                <label for="thirdDriverClaimsAccidents" data-en="Did the third driver have any Claims or Accidents in the UK for the last 5 years?"
+                                    data-ru="Были ли у третьего водителя страховые случаи или аварии в Великобритании за последние 5 лет?"
+                                    data-bg="Има ли третият шофьор инциденти или други застрахователни случаи във Великобритания през последните 5 години?"
+                                    data-ro="A avut al treilea șofer vreo cerere de despăgubire sau accidente în Marea Britanie în ultimii 5 ani?">
+                                    Did the third driver have any Claims or Accidents in the UK for the last 5 years?
+                                </label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="radio" id="thirdDriverNoClaims" name="THIRD_DRIVER_CLAIMSACCIDENTS" value="No">
+                                <label for="thirdDriverNoClaims" data-en="No" data-ru="Нет" data-bg="Не" data-ro="Nu" class="radio-button">No</label>
+
+                                <input type="radio" id="thirdDriverYesClaims" name="THIRD_DRIVER_CLAIMSACCIDENTS" value="Yes">
+                                <label for="thirdDriverYesClaims" data-en="Yes" data-ru="Да" data-bg="Да" data-ro="Da" class="radio-button">Yes</label>
+                            </div>
+                        </div>
+
+                        <div class="form_wrapper" id="thirdDriverClaimDescriptionBlock" style="display: none;">
+                            <div class="label_wrapper">Choose type of claim:</div>
+                            <div class="input_wrapper">
+                                <input type="radio" id="thirdDriverAccident" name="THIRD_DRIVER_CLAIMTYPE" value="Accident">
+                                <label for="thirdDriverAccident" data-en="Accident" data-ru="Авария" data-bg="Авария" data-ro="Accident" class="radio-button">Accident</label>
+
+                                <input type="radio" id="thirdDriverTheft" name="THIRD_DRIVER_CLAIMTYPE" value="Theft">
+                                <label for="thirdDriverTheft" data-en="Theft" data-ru="Кража" data-bg="Кражба" data-ro="Furt" class="radio-button">Theft</label>
+
+                                <input type="radio" id="thirdDriverFire" name="THIRD_DRIVER_CLAIMTYPE" value="Fire">
+                                <label for="thirdDriverFire" data-en="Fire" data-ru="Огонь" data-bg="Огън" data-ro="Foc" class="radio-button">Fire</label>
+                            </div>
+
+                            <div class="form_wrapper" id="thirdDriverDescriptionFault">
+                                <div class="label_wrapper">
+                                    <label for="thirdDriverDescriptionFault" data-en="b) Who was at fault for the accident?" data-ru="b) Кто был виновник в ДТП?" data-bg="b) Кой беше виновен за инцидента" data-ro="b) Cine a fost vinovat pentru accident">
+                                        b) Who was at fault for the accident?
+                                    </label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="radio" id="thirdDriverMyFault" name="THIRD_DRIVER_DESCRIPTIONFAULT" value="My fault">
+                                    <label for="thirdDriverMyFault" data-en="My fault" data-ru="Моя вина" data-bg="Моя грешка" data-ro="Vina mea" class="radio-button">My fault</label>
+
+                                    <input type="radio" id="thirdDriverNotMyFault" name="THIRD_DRIVER_DESCRIPTIONFAULT" value="Not my fault">
+                                    <label for="thirdDriverNotMyFault" data-en="Not my fault" data-ru="Не моя вина" data-bg="Не е моя грешка" data-ro="Nu e vina mea" class="radio-button">Not my fault</label>
+                                </div>
+                                <div class="label_wrapper">
+                                    <label for="thirdDriverClaimCost" data-en="c) Claim cost, £" data-ru="c) Стоимость ущерба, £" data-bg="c) Разходи по иска (обезщетение), £" data-ro="c) Costul cererii, £">
+                                        c) Claim cost, £
+                                    </label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="thirdDriverClaimCost" name="THIRD_DRIVER_CLAIMCOST" pattern="[0-9]+(\.[0-9]{1,2})?" oninput="this.value = this.value.replace(/[^0-9.]/g, '');">
+                                </div><br>
+
+                                <div class="label_wrapper">
+                                    <label for="thirdDriverClaimDate" data-en="d) Claim date" data-ru="d) Дата происшествия" data-bg="d) Дата на призшествието" data-ro="d) Data cererii">
+                                        d) Claim date
+                                    </label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="thirdDriverClaimDate" name="THIRD_DRIVER_CLAIMDATE" placeholder="DD/MM/YYYY">
+                                </div>
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function() {
+                                        const dateInput = document.getElementById('thirdDriverClaimDate');
+
+                                        dateInput.addEventListener('input', function(e) {
+                                            var input = e.target.value.replace(/\D/g, '').slice(0, 8); // Remove non-digits and limit to 8 characters
+                                            var formattedDate = "";
+
+                                            // Iterate over each character in the input
+                                            for (let i = 0; i < input.length; i++) {
+                                                // Add the character to the formattedDate string
+                                                formattedDate += input[i];
+
+                                                // Add a slash after the second and fourth digits
+                                                if (i === 1 || i === 3) {
+                                                    formattedDate += '/';
+                                                }
+                                            }
+
+                                            // Update the value of the input with the formatted date
+                                            e.target.value = formattedDate;
+                                        });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+
+                        <script>
+                            document.querySelector('form').addEventListener('change', function () {
+                                var thirdDriverClaimsQuestion = document.querySelector('input[name="THIRD_DRIVER_CLAIMSACCIDENTS"]:checked');
+                                var thirdDriverClaimDescriptionBlock = document.getElementById('thirdDriverClaimDescriptionBlock');
+
+                                // Display the block if "Yes" is selected
+                                if (thirdDriverClaimsQuestion && thirdDriverClaimsQuestion.value === 'Yes') {
+                                    thirdDriverClaimDescriptionBlock.style.display = 'block';
+                                } else {
+                                    thirdDriverClaimDescriptionBlock.style.display = 'none';
+                                }
+                            });
+                        </script>
+
+                        <script>
+                            document.querySelector('form').addEventListener('change', function () {
+                                var VehicleType = document.querySelector('input[name="VehicleType"]:checked')?.value;
+                                var thirdDriverClaimsQuestion = document.querySelector('input[name="THIRD_DRIVER_CLAIMSACCIDENTS"]:checked');
+                                var thirdDriverClaimCostBlock = document.getElementById('thirdDriverClaimCostBlock');
+                                var thirdDriverClaimDateBlock = document.getElementById('thirdDriverClaimDateBlock');
+
+                                if (thirdDriverClaimsQuestion && thirdDriverClaimsQuestion.value === 'Yes' && (VehicleType !== 'Car-Temporary' && VehicleType !== 'Van-Temporary')) {
+                                    thirdDriverClaimCostBlock.style.display = 'block';
+                                    thirdDriverClaimDateBlock.style.display = 'block';
+                                } else {
+                                    thirdDriverClaimCostBlock.style.display = 'none';
+                                    thirdDriverClaimDateBlock.style.display = 'none';
+                                }
+                            });
+                        </script>
+
+                        <div class="form_wrapper" id="thirdDriverConvictions" style="display: none;">
+                            <div class="label_wrapper">
+                                <label for="thirdDriverConvictions" data-en="Does the third driver have any motoring Convictions or Penalty points in the last 4 years?"
+                                    data-ru="Есть ли у третьего водителя автомобильные правонарушения или штрафные очки за последние 4 года?"
+                                    data-bg="Има ли третият шофьор нарушения/наказателни точки за последните 4 години?"
+                                    data-ro="Are al treilea șofer condamnări sau puncte de penalizare auto în ultimii 4 ani?">
+                                    Does the third driver have any motoring Convictions or Penalty points in the last 4 years?
+                                </label>
+                            </div>
+                            <div class="input_wrapper">
+                                <input type="radio" id="thirdDriverConvictionsNo" name="THIRD_DRIVER_CONVICTIONSPOINTS" value="No">
+                                <label for="thirdDriverConvictionsNo" data-en="No" data-ru="Нет" data-bg="Не" data-ro="Nu" class="radio-button">No</label>
+
+                                <input type="radio" id="thirdDriverConvictionsYes" name="THIRD_DRIVER_CONVICTIONSPOINTS" value="Yes">
+                                <label for="thirdDriverConvictionsYes" data-en="Yes" data-ru="Да" data-bg="Да" data-ro="Da" class="radio-button">Yes</label>
+                            </div>
+                        </div>
+
+                        <div id="thirdDriverHiddenQuestions" style="display: none;">
+                            <!-- Hidden questions about penalties for the third driver -->
+                            <div class="form_wrapper" id="thirdDriverLicenceNumberBlock">
+                                <div class="label_wrapper">
+                                    <label for="thirdDriverLicenceNumber" data-en="a) Third driver's driving licence number"
+                                        data-ru="a) Номер водительского удостоверения третьего водителя (5 пункт на лицевой стороне)"
+                                        data-bg="a) Номер на шофьорската книжка на третия шофьор (пета точка на лицето на книжката)"
+                                        data-ro="a) Numărul permisului de conducere al celui de-al treilea șofer">
+                                        a) Third driver's driving licence number
+                                    </label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="thirdDriverLicenceNumber" name="THIRD_DRIVER_LICENCENUMBER">
+                                </div>
+                            </div>
+
+                            <div class="form_wrapper" id="thirdDriverPostcodeLicenceBlock">
+                                <div class="label_wrapper">
+                                    <label for="thirdDriverPostcodeLicence" data-en="c) Third driver's postcode on driving licence"
+                                        data-ru="c) Почтовый индекс (postcode) на водительских правах третьего водителя"
+                                        data-bg="c) Пощенски код на шофьорската книжка на третия шофьор"
+                                        data-ro="c) Cod poștal pe permisul de conducere al celui de-al treilea șofer">
+                                        c) Third driver's postcode on driving licence
+                                    </label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="thirdDriverPostcodeLicence" name="THIRD_DRIVER_POSTCODELICENCE" pattern="[A-Za-z0-9]{1,}" oninput="this.value = this.value.replace(/[^A-Za-z0-9]/g, '');">
+                                </div>
+                            </div>
+
+                            <div class="form_wrapper" id="thirdDriverNinNumberBlock">
+                                <div class="label_wrapper">
+                                    <label for="thirdDriverNinNumber" data-en="b) Third driver's NIN number"
+                                        data-ru="b) Номер NIN третьего водителя"
+                                        data-bg="b) Номер на NIN на третия шофьор"
+                                        data-ro="b) Număr NIN al celui de-al treilea șofer">
+                                        b) Third driver's NIN number
+                                    </label>
+                                </div>
+                                <div class="input_wrapper">
+                                    <input type="text" id="thirdDriverNinNumber" name="THIRD_DRIVER_NINNUMBER" pattern="[A-Za-z0-9]{9}" oninput="this.value = this.value.replace(/[^A-Za-z0-9]/g, '');">
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            document.querySelector('form').addEventListener('change', function () {
+                                var vehicleType = document.querySelector('input[name="VehicleType"]:checked')?.value;
+                                var thirdDriverConvictions = document.getElementById('thirdDriverConvictions');
+
+                                if (vehicleType && vehicleType !== 'Car-Temporary' && vehicleType !== 'Van-Temporary') {
+                                    thirdDriverConvictions.style.display = 'block';
+                                } else {
+                                    thirdDriverConvictions.style.display = 'none';
+                                    document.getElementById('thirdDriverHiddenQuestions').style.display = 'none';
+                                }
+
+                                var thirdDriverConvictionsQuestion = document.querySelector('input[name="THIRD_DRIVER_CONVICTIONSPOINTS"]:checked');
+                                if (thirdDriverConvictionsQuestion && thirdDriverConvictionsQuestion.value === 'Yes') {
+                                    document.getElementById('thirdDriverHiddenQuestions').style.display = 'block';
+                                } else {
+                                    document.getElementById('thirdDriverHiddenQuestions').style.display = 'none';
+                                }
+                            });
+                        </script>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="form_wrapper" id="insuranceStartDateBlock">
+                        <div class="label_wrapper">
+                            <label for="insuranceStartDate" data-en="Preferred insurance start date" data-ru="Желаемая дата начала страхования" data-bg="Предпочитана дата за начало на застраховката" data-ro="Data de începere preferată a asigurării">
+                                Preferred insurance start date
+                            </label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" id="insuranceStartDate" name="INSURANCESTARTDATE" placeholder="DD/MM/YYYY">
+                        </div>
+                    </div>
+
+
+                    <div class="form_wrapper" id="temporaryInsuranceDaysBlock" style="display: none;">
+                        <div class="label_wrapper">
+                            <label for="temporaryInsuranceDays" data-en="How many days do you need temporary insurance?" data-ru="На сколько дней вам нужна временная страховка?" data-bg="За колко дни ви трябва временна застраховка?" data-ro="Câte zile aveți nevoie de asigurare temporară?">
+                                How many days do you need temporary insurance?
+                            </label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" id="temporaryInsuranceDays" name="TEMPORARY_INSURANCE_DAYS">
+                        </div>
+                    </div>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Show temporary insurance days block only for temporary vehicles
+                            document.querySelector('form').addEventListener('change', function() {
+                                var vehicleType = document.querySelector('input[name="VehicleType"]:checked')?.value;
+                                var temporaryInsuranceDaysBlock = document.getElementById('temporaryInsuranceDaysBlock');
+
+                                if (vehicleType === 'Car-Temporary' || vehicleType === 'Van-Temporary') {
+                                    temporaryInsuranceDaysBlock.style.display = 'block';
+                                } else {
+                                    temporaryInsuranceDaysBlock.style.display = 'none';
+                                }
+                            });
+                        });
+                    </script>
+
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label data-en="Preferred contact method" data-ru="Предпочтительный способ связи" data-bg="Предпочитан метод за контакт" data-ro="Metod de contact preferat">
+                                Preferred contact method
+                            </label>
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="radio" id="whatsapp" name="CONTACTMETHOD" value="WhatsApp">
+                            <label for="whatsapp" class="radio-button" data-en="WhatsApp" data-ru="WhatsApp" data-bg="WhatsApp" data-ro="WhatsApp">WhatsApp</label>
+
+                            <input type="radio" id="viber" name="CONTACTMETHOD" value="Viber">
+                            <label for="viber" class="radio-button" data-en="Viber" data-ru="Viber" data-bg="Viber" data-ro="Viber">Viber</label>
+
+                            <input type="radio" id="sms" name="CONTACTMETHOD" value="SMS">
+                            <label for="sms" class="radio-button" data-en="SMS" data-ru="SMS" data-bg="SMS" data-ro="SMS">SMS</label>
+                        </div>
+                    </div>
+
+                    <div class="form_wrapper">
+                        <div class="label_wrapper">
+                            <label for="additionalInfo" data-en="Additional information (up to 500 characters)" data-ru="Дополнительная информация (до 500 символов)" data-bg="Допълнителна информация (до 500 символа)" data-ro="Informații suplimentare (până la 500 de caractere)">
+                                Additional information (up to 500 characters)
+                            </label>
+                        </div>
+                        <div class="input_wrapper">
+                            <textarea id="additionalInfo" name="ADDITIONALINFO" maxlength="500"></textarea>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <button type="button" id="back-3"
+                            data-en="Back"
+                            data-ru="Назад"
+                            data-bg="Назад"
+                            data-ro="Înapoi">
+                        Back
+                    </button>
+                    <button type="button" id="review-data"
+                            data-en="Review"
+                            data-ru="Проверка"
+                            data-bg="Провери"
+                            data-ro="Verificare">
+                        Проверка
+                    </button>
+                    <button type="submit" id="save"
+                            data-en="Submit"
+                            data-ru="Отправить"
+                            data-bg="Изпрати"
+                            data-ro="Trimite">
+                        Submit
+                    </button>
+                    <div id="loading-spinner" class="loading hidden"></div>
+                    <style>
+                      .loading {
+                        border: 4px solid rgba(0, 0, 0, 0.1);
+                        border-left-color: #000;
+                        border-radius: 50%;
+                        width: 24px;
+                        height: 24px;
+                        animation: spin 1s linear infinite;
+                        display: inline-block;
+                      }
+
+                      @keyframes spin {
+                        to {
+                          transform: rotate(360deg);
+                        }
+                      }
+
+                      .hidden {
+                        display: none;
+                      }
+                    </style>
+
+
+                </div>
+
+            </form>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js"></script>
+
+</body>
+</html>
